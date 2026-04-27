@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.png" type="image/png" />
     <title>Profil Profesional | Agasta Pratama Nugraha</title>
     <link rel="stylesheet" href="CSS/profile.css" />
     <link
@@ -106,7 +107,7 @@
               >
             </h1>
 
-            <p class="editorial-desc fade-up" style="animation-delay: 2s">
+            <p class="editorial-desc fade-up" style="animation-delay: 2.2s">
               Sarjana Komputer & Calon Pendidik Informatika yang berdedikasi
               menciptakan pengalaman belajar digital yang transformatif,
               interaktif, dan berbasis TPACK.
@@ -114,7 +115,7 @@
 
             <div
               class="editorial-actions fade-up"
-              style="animation-delay: 2.2s"
+              style="animation-delay: 2.5s"
             >
               <a href="mailto:email@kamu.com" class="btn-editorial-main"
                 >Kontak Saya</a
@@ -128,7 +129,10 @@
         <div class="container">
           <div class="bio-overlap-wrapper">
             <div class="bio-main-card float-anim-1">
-              <div class="bio-header">
+              <div class="card-border-glow"></div>
+              <div class="card-bg-overlay"></div>
+
+              <div class="bio-header relative-z">
                 <div class="bio-badge">
                   <i class="fa-solid fa-fingerprint"></i> Cerita Saya
                 </div>
@@ -136,47 +140,41 @@
                   Mengenal Lebih <span class="text-gradient">Dekat</span>
                 </h2>
               </div>
-              <div class="bio-body">
+              <div class="bio-body relative-z">
                 <p>
-                  Halo! Saya <strong>Agasta Pratama Nugraha</strong>. Saya
-                  berasal dari Banjarnegara, Jawa Tengah sebuah daerah asri yang
-                  sangat khas dengan kesegaran kuliner Dawet Ayu serta keunikan
-                  tradisi pemotongan rambut gimbal di Dataran Tinggi Dieng.
-                </p>
-                <p>
-                  Lahir dan tumbuh di tengah keluarga pendidik, melihat dedikasi
-                  tanpa pamrih dari ibu dan ayah saya sebagai guru telah menjadi
-                  inspirasi terbesar dalam hidup saya. Menyadari bahwa di daerah
-                  asal saya masih sangat minim guru Informatika yang berlatar
-                  belakang pendidikan linear, panggilan jiwa saya untuk
-                  meneruskan tongkat estafet pendidikan tersebut semakin kuat.
-                </p>
-                <p>
-                  Melalui
+                  Halo! Saya <strong>Agasta Pratama Nugraha</strong>. Perjalanan
+                  saya di dunia informatika bukan sekadar tentang baris kode,
+                  melainkan tentang bagaimana teknologi dapat menjadi solusi
+                  nyata bagi masyarakat. Melalui program
                   <strong>PPG Prajabatan Universitas Negeri Yogyakarta</strong>,
-                  tujuan saya adalah menjadi guru profesional yang mampu
-                  berkontribusi nyata. Saya ingin memastikan anak-anak di daerah
-                  saya tidak tertinggal, melainkan mendapatkan pengetahuan
-                  teknologi terbaru dan literasi digital yang berkualitas
-                  langsung dari pendidik yang kompeten di bidangnya.
+                  saya berkomitmen untuk mengintegrasikan ilmu teknologi dengan
+                  metode pembelajaran yang inovatif.
+                </p>
+                <p>
+                  Saya percaya bahwa pendidikan adalah kunci perubahan. Sebagai
+                  calon pendidik, tugas saya adalah membekali generasi mendatang
+                  dengan keterampilan digital, *Computational Thinking*, dan
+                  etika penggunaan teknologi yang adaptif terhadap era disrupsi
+                  digital.
                 </p>
               </div>
             </div>
 
             <div class="bio-quote-card float-anim-2">
-              <i class="fa-solid fa-quote-right quote-watermark"></i>
-              <div class="quote-content-wrapper">
+              <div class="quote-border-glow"></div>
+              <div class="quote-bg-overlay"></div>
+
+              <i class="fa-solid fa-quote-right quote-watermark relative-z"></i>
+              <div class="quote-content-wrapper relative-z">
                 <div class="quote-icon">
                   <i class="fa-solid fa-quote-left"></i>
                 </div>
                 <p class="quote-text">
-                  "Pendidikan adalah senjata paling ampuh yang bisa digunakan
-                  untuk mengubah dunia. Setiap orang bisa menjadi guru, dan
-                  setiap tempat bisa menjadi sekolah."
+                  "Teknologi hanyalah alat. Namun di tangan guru yang tepat, ia
+                  menjadi inspirasi. Mengajar bukan sekadar transfer data,
+                  melainkan menyalakan api keingintahuan."
                 </p>
-                <span class="quote-author"
-                  >— Nelson Mandela & Ki Hajar Dewantara</span
-                >
+                <span class="quote-author">— Filosofi Mengajar Agasta</span>
               </div>
             </div>
           </div>
@@ -200,15 +198,29 @@
               <div class="timeline-marker">
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
-              <div class="timeline-content-glass">
-                <div class="year-chip">2026</div>
-                <h3>Universitas Negeri Yogyakarta (UNY)</h3>
-                <h4 class="major-text">PPG Prajabatan Informatika</h4>
-                <p>
-                  Fokus pada pengembangan pedagogi digital, desain pembelajaran
-                  kreatif inovatif, dan implementasi TPACK dalam ekosistem
-                  pendidikan modern.
-                </p>
+
+              <div class="timeline-flip-container">
+                <div class="timeline-flip-inner">
+                  <div class="timeline-flip-front timeline-content-glass">
+                    <div class="year-chip">2026</div>
+                    <h3>Universitas Negeri Yogyakarta (UNY)</h3>
+                    <h4 class="major-text">PPG Prajabatan Informatika</h4>
+                    <div class="flip-hint-text">
+                      <i class="fa-solid fa-arrow-pointer"></i> Sorot untuk
+                      membalik
+                    </div>
+                  </div>
+                  <div class="timeline-flip-back bg-soft-blue">
+                    <i
+                      class="fa-solid fa-graduation-cap timeline-back-watermark"
+                    ></i>
+                    <p class="back-text">
+                      Fokus pada pengembangan pedagogi digital, desain
+                      pembelajaran kreatif inovatif, dan implementasi TPACK
+                      dalam ekosistem pendidikan modern.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -219,15 +231,29 @@
               <div class="timeline-marker">
                 <i class="fa-solid fa-laptop-code"></i>
               </div>
-              <div class="timeline-content-glass">
-                <div class="year-chip">2021 - 2025</div>
-                <h3>Universitas Muhammadiyah Purwokerto (UMP)</h3>
-                <h4 class="major-text">S1 Teknik Informatika</h4>
-                <p>
-                  Memperdalam rekayasa perangkat lunak, algoritma, serta
-                  pengembangan sistem informasi sebagai fondasi teknologi yang
-                  kuat.
-                </p>
+
+              <div class="timeline-flip-container">
+                <div class="timeline-flip-inner">
+                  <div class="timeline-flip-front timeline-content-glass">
+                    <div class="year-chip">2021 - 2025</div>
+                    <h3>Universitas Muhammadiyah Purwokerto (UMP)</h3>
+                    <h4 class="major-text">S1 Teknik Informatika</h4>
+                    <div class="flip-hint-text">
+                      <i class="fa-solid fa-arrow-pointer"></i> Sorot untuk
+                      membalik
+                    </div>
+                  </div>
+                  <div class="timeline-flip-back bg-soft-purple">
+                    <i
+                      class="fa-solid fa-laptop-code timeline-back-watermark"
+                    ></i>
+                    <p class="back-text">
+                      Memperdalam rekayasa perangkat lunak, algoritma, serta
+                      pengembangan sistem informasi sebagai fondasi teknologi
+                      yang kuat.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -238,14 +264,26 @@
               <div class="timeline-marker">
                 <i class="fa-solid fa-school"></i>
               </div>
-              <div class="timeline-content-glass">
-                <div class="year-chip">2019 - 2021</div>
-                <h3>MA Miftahussalam Banyumas</h3>
-                <h4 class="major-text">Pendidikan Menengah Atas</h4>
-                <p>
-                  Tempat pertama kali membangun fondasi akademik, karakter
-                  kepemimpinan, dan minat terhadap dunia logika & sains.
-                </p>
+
+              <div class="timeline-flip-container">
+                <div class="timeline-flip-inner">
+                  <div class="timeline-flip-front timeline-content-glass">
+                    <div class="year-chip">2019 - 2021</div>
+                    <h3>MA Miftahussalam Banyumas</h3>
+                    <h4 class="major-text">Pendidikan Menengah Atas</h4>
+                    <div class="flip-hint-text">
+                      <i class="fa-solid fa-arrow-pointer"></i> Sorot untuk
+                      membalik
+                    </div>
+                  </div>
+                  <div class="timeline-flip-back bg-soft-teal">
+                    <i class="fa-solid fa-school timeline-back-watermark"></i>
+                    <p class="back-text">
+                      Tempat pertama kali membangun fondasi akademik, karakter
+                      kepemimpinan, dan minat terhadap dunia logika & sains.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -394,9 +432,8 @@
           <div class="footer-brand">
             <h3 class="footer-logo">E-Portofolio <span>PPG</span></h3>
             <p class="footer-desc">
-              Portal resmi dokumentasi artefak dan refleksi Program Pendidikan
-              Profesi Guru (PPG) Prajabatan bidang studi Informatika di
-              Universitas Negeri Yogyakarta.
+              Rekam jejak dedikasi, inovasi, dan refleksi berkelanjutan menuju
+              pendidik profesional abad ke-21.
             </p>
             <div class="social-neon">
               <a href="#" class="neon-btn"
@@ -467,7 +504,6 @@
     </footer>
 
     <script>
-      // Navbar Logic
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
@@ -477,7 +513,6 @@
         }
       });
 
-      // Hamburger
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
       hamburger.addEventListener("click", () => {
@@ -485,10 +520,7 @@
         hamburger.classList.toggle("active");
       });
 
-      // Animasi Scroll Reveal (TIDAK BOLEH MEMAKSA INLINE STYLE)
       function reveal() {
-        // Hanya target elemen yang bergantung pada scroll (.reveal dan .fade-slide-up)
-        // Jangan masukkan .fade-up milik hero section ke sini agar tidak tabrakan!
         var reveals = document.querySelectorAll(".reveal, .fade-slide-up");
         for (var i = 0; i < reveals.length; i++) {
           var windowHeight = window.innerHeight;

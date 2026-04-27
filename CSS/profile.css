@@ -54,7 +54,6 @@ body {
 /* ANIMATION CLASSES (FADE UP & TYPING)      */
 /* ========================================= */
 
-/* 1. Reveal biasa (transisi) */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -65,14 +64,11 @@ body {
   transform: translateY(0);
 }
 
-/* 2. Fade Up Otomatis untuk Hero Section (jalan pas web dibuka) */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeUpAnim 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-
-/* 3. Fade Slide Up berbasis Scroll (Jalan pas user scroll ke bawah) */
 .fade-slide-up {
   opacity: 0;
   transform: translateY(40px);
@@ -80,7 +76,6 @@ body {
 .fade-slide-up.active {
   animation: fadeUpAnim 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 @keyframes fadeUpAnim {
   to {
     opacity: 1;
@@ -88,7 +83,6 @@ body {
   }
 }
 
-/* Animasi Efek Mengetik */
 .type-wipe {
   display: inline-block;
   clip-path: inset(0 100% 0 0);
@@ -376,7 +370,7 @@ body {
 }
 
 /* ========================================= */
-/* CERITA SAYA (OVERLAP FLOATING CARDS)      */
+/* CERITA SAYA (OVERLAP CARDS + GLOW BORDER) */
 /* ========================================= */
 .bio-wow-overlap {
   padding: 60px 0 100px;
@@ -389,14 +383,12 @@ body {
   margin: 0 auto;
 }
 
-/* Animasi Float Halus untuk Card (Bukan fade, biar teks terbaca) */
 .float-anim-1 {
   animation: floatSmooth 6s ease-in-out infinite;
 }
 .float-anim-2 {
   animation: floatSmooth 6s ease-in-out infinite 1.5s;
-} /* Delay sedikit biar beda irama */
-
+}
 @keyframes floatSmooth {
   0%,
   100% {
@@ -407,19 +399,51 @@ body {
   }
 }
 
-/* Card 1: Cerita Utama (Glassmorphism Tebal) */
 .bio-main-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.85); /* Cukup solid agar teks jelas */
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 1);
+  background: transparent;
   border-radius: 30px;
   padding: 50px 60px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
   width: 85%;
   z-index: 2;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+.card-bg-overlay {
+  position: absolute;
+  inset: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(25px);
+  border-radius: 28px;
+  z-index: 0;
+}
+.card-border-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    var(--primary),
+    var(--cyan),
+    transparent
+  );
+  animation: rotateGlow 4s linear infinite;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+.bio-main-card:hover .card-border-glow {
+  opacity: 1;
 }
 
+.relative-z {
+  position: relative;
+  z-index: 1;
+}
 .bio-badge {
   display: inline-block;
   background: rgba(37, 99, 235, 0.1);
@@ -433,7 +457,6 @@ body {
 .bio-badge i {
   margin-right: 5px;
 }
-
 .bio-header {
   margin-bottom: 25px;
 }
@@ -447,22 +470,49 @@ body {
   color: var(--text-dark);
 }
 
-/* Card 2: Filosofi (Biru Premium) */
 .bio-quote-card {
   position: relative;
+  background: transparent;
+  color: white;
+  border-radius: 24px;
+  padding: 40px 50px;
+  width: 75%;
+  margin: -60px 0 0 auto;
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
+  z-index: 3;
+  overflow: hidden;
+}
+.quote-bg-overlay {
+  position: absolute;
+  inset: 2px;
   background: linear-gradient(
     135deg,
     var(--primary) 0%,
     var(--primary-dark) 100%
   );
-  color: white;
-  border-radius: 24px;
-  padding: 40px 50px;
-  width: 75%;
-  margin: -60px 0 0 auto; /* Overlap/Menumpuk dari bawah kanan */
-  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
-  z-index: 3;
-  overflow: hidden;
+  border-radius: 22px;
+  z-index: 0;
+}
+.quote-border-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    #fff,
+    var(--cyan),
+    transparent
+  );
+  animation: rotateGlow 4s linear infinite;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+.bio-quote-card:hover .quote-border-glow {
+  opacity: 1;
 }
 
 .quote-watermark {
@@ -472,14 +522,13 @@ body {
   font-size: 10rem;
   color: rgba(255, 255, 255, 0.05);
   transform: rotate(-10deg);
+  z-index: 1;
 }
-
 .quote-content-wrapper {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  z-index: 2;
 }
 .quote-icon {
   font-size: 2rem;
@@ -500,7 +549,7 @@ body {
 }
 
 /* ========================================= */
-/* PENDIDIKAN (GLOWING TIMELINE)             */
+/* PENDIDIKAN (TIMELINE VERTIKAL 3D FLIP)    */
 /* ========================================= */
 .edu-wow-section {
   padding: 60px 0 100px;
@@ -540,6 +589,18 @@ body {
   transition: 0.4s ease;
   z-index: 2;
 }
+
+/* Area Pembungkus Flip 3D (Berputar Vertikal) */
+.timeline-flip-container {
+  position: relative;
+  width: 100%;
+  perspective: 1500px;
+  transition: transform 0.4s ease;
+}
+/* Efek Container Sedikit Geser Saat Di-Hover (Bukan Child) */
+.timeline-item-wow:hover .timeline-flip-container {
+  transform: translateX(15px);
+}
 .timeline-item-wow:hover .timeline-marker {
   background: var(--primary);
   color: white;
@@ -548,22 +609,72 @@ body {
   box-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
 }
 
+/* Inner Flip - Putar Sumbu X (Vertikal) */
+.timeline-flip-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+/* Nilai Negatif agar berputar ke arah atas membalik */
+.timeline-item-wow:hover .timeline-flip-inner {
+  transform: rotateX(-180deg);
+}
+
+.timeline-flip-front,
+.timeline-flip-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+/* Bagian Depan (Glass) */
+.timeline-flip-front {
+  position: relative;
+  width: 100%;
+}
 .timeline-content-glass {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-  transition: 0.4s;
-}
-.timeline-item-wow:hover .timeline-content-glass {
-  transform: translateX(15px);
-  border-color: var(--primary-light);
-  background: white;
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
 }
 
+/* Bagian Belakang Kartu (Background Warna Soft) */
+.timeline-flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(180deg); /* Disiapkan Terbalik 180 derajat sumbu X */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Background Soft (Aurora) */
+.bg-soft-blue {
+  background: linear-gradient(135deg, #93c5fd, #3b82f6);
+  border: none;
+}
+.bg-soft-purple {
+  background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+  border: none;
+}
+.bg-soft-teal {
+  background: linear-gradient(135deg, #5eead4, #0d9488);
+  border: none;
+}
+
+/* Konten Dalam Flip Depan/Belakang */
 .year-chip {
   display: inline-block;
   background: var(--primary-light);
@@ -585,12 +696,35 @@ body {
   font-size: 1.1rem;
   color: var(--accent);
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
-.timeline-content-glass p {
-  font-size: 1.05rem;
-  color: var(--text-light);
-  line-height: 1.6;
+.flip-hint-text {
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-top: 15px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.timeline-back-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7rem;
+  color: #ffffff;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+.back-text {
+  position: relative;
+  z-index: 1;
+  font-size: 1.15rem;
+  color: #ffffff;
+  line-height: 1.8;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* ========================================= */
@@ -1218,6 +1352,7 @@ body {
     font-size: 1.1rem;
   }
 
+  /* Timeline HP Fixed */
   .timeline-wow {
     margin-left: 10px;
     padding-left: 25px;
@@ -1228,10 +1363,12 @@ body {
     height: 40px;
     font-size: 1rem;
   }
-  .timeline-content-glass {
+  .timeline-flip-front,
+  .timeline-flip-back {
     padding: 20px;
   }
-  .timeline-item-wow:hover .timeline-content-glass {
+  /* Hapus efek geser child agar Flip 3D tidak bentrok/patah di Mobile */
+  .timeline-item-wow:hover .timeline-flip-container {
     transform: translateX(10px);
   }
 
