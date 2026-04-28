@@ -27,21 +27,6 @@
   color: white;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
-}
-
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--bg);
@@ -79,6 +64,18 @@ body {
 }
 .reveal-delay-4 {
   transition-delay: 0.4s;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards ease-out;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========================================= */
@@ -140,11 +137,11 @@ body {
 }
 
 /* ========================================= */
-/* HERO SECTION (WOW EDITION)                */
+/* HERO SECTION TEKS                         */
 /* ========================================= */
 .hero-modern {
   position: relative;
-  padding: 160px 0 100px;
+  padding: 140px 0 100px;
   min-height: 95vh;
   display: flex;
   flex-direction: column;
@@ -158,21 +155,24 @@ body {
 }
 
 .hero-text-content {
-  flex: 1;
+  flex: 1.1;
   z-index: 2;
 }
 .badge-tech {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(37, 99, 235, 0.1);
+  background: #ffffff;
   color: var(--primary);
-  padding: 8px 16px;
+  padding: 8px 20px;
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .hero-text-content h1 {
   font-size: 3.8rem;
@@ -183,7 +183,18 @@ body {
   letter-spacing: -1px;
 }
 
-/* Animated Gradient Text */
+.title-line-wow {
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 10px;
+  margin-top: 15px;
+
+  /* Tambahkan ini */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .text-gradient {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -206,6 +217,18 @@ body {
   to {
     background-position: 300% center;
   }
+}
+
+/* Animasi Mengetik Teks (Typing Wipe) */
+.type-wipe {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0); /* Teks disembunyikan ke arah kanan */
+  animation: wipeRight 0.8s steps(20, end) forwards;
+}
+@keyframes wipeRight {
+  to {
+    clip-path: inset(0 -5% 0 0);
+  } /* Muncul penuh */
 }
 
 .hero-text-content p {
@@ -263,182 +286,153 @@ body {
   background: white;
 }
 
-/* Foto Kanan & Ring Animation */
+/* ========================================= */
+/* HERO VISUAL (CLEAN PORTRAIT 3x4 WOW)      */
+/* ========================================= */
 .hero-visual {
-  flex: 1;
+  flex: 0.9;
   display: flex;
   justify-content: center;
   position: relative;
   z-index: 2;
 }
-.profile-showcase {
+
+.modern-portrait-container {
   position: relative;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 320px;
+  height: 426px;
+  margin: 0 auto;
+  z-index: 10;
 }
 
-.profile-ring {
+/* Glow Bercahaya di Belakang Frame */
+.portrait-glow {
   position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  border: 2px dashed rgba(37, 99, 235, 0.4);
-  animation: spinRing 20s linear infinite;
-  z-index: 1;
+  inset: -20px;
+  background: linear-gradient(135deg, #4facfe, #8b5cf6, #00f2fe);
+  filter: blur(40px);
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 40px;
+  animation: pulseGlow 6s infinite alternate;
 }
-@keyframes spinRing {
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.4;
+  }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1.05);
+    opacity: 0.6;
   }
 }
 
-.profile-image {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  border: 10px solid white;
+/* Bingkai Kaca Elegan */
+.portrait-frame {
   position: relative;
-  z-index: 5;
-  animation: floatProfile 6s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 25px 50px rgba(37, 99, 235, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  animation: floatMain 6s ease-in-out infinite;
 }
 
-@keyframes floatProfile {
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+@keyframes floatMain {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-12px);
   }
 }
 
-.float-badge {
+/* Efek Hover 3D Ringan */
+.modern-portrait-container:hover .portrait-frame {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 35px 60px rgba(37, 99, 235, 0.2);
+}
+
+/* LENCANA (BADGES) SEPERTI REFERENSI GAMBAR */
+.badge-clean {
   position: absolute;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px 15px;
-  border-radius: 12px;
+  background: #ffffff;
+  padding: 8px 24px 8px 8px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--text-dark);
+  gap: 12px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 1);
-  backdrop-filter: blur(10px);
-  z-index: 6;
-  animation: floatElements 4s ease-in-out infinite alternate;
+  z-index: 15;
+  transition: transform 0.3s ease;
 }
-.float-badge .icon-box {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
+.badge-clean:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.badge-clean .icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 0.95rem;
 }
-.badge-1 {
-  top: 10%;
-  left: -5%;
-  animation-delay: 0s;
-}
-.badge-1 .icon-box {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-}
-.badge-2 {
-  bottom: 15%;
-  right: -5%;
-  animation-delay: 1s;
-}
-.badge-2 .icon-box {
-  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-}
-.badge-3 {
-  bottom: 5%;
-  left: 5%;
-  animation-delay: 2s;
-}
-.badge-3 .icon-box {
-  background: linear-gradient(135deg, #10b981, #059669);
+.badge-clean .badge-text {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.95rem;
+  letter-spacing: -0.3px;
 }
 
-@keyframes floatElements {
+.bg-blue-grad {
+  background: #2563eb;
+}
+.bg-purple-grad {
+  background: #8b5cf6;
+}
+
+/* Penempatan Posisi Badge */
+.badge-info {
+  top: 40px;
+  left: -50px;
+  animation: floatLayer 4s ease-in-out infinite alternate;
+}
+.badge-uny {
+  bottom: 50px;
+  right: -50px;
+  animation: floatLayer 5s ease-in-out infinite alternate-reverse;
+}
+@keyframes floatLayer {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(-10px) scale(1.05);
-  }
-}
-
-/* Scroll Down Indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.7;
-}
-.scroll-indicator span {
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.mouse {
-  width: 26px;
-  height: 40px;
-  border: 2px solid var(--text-dark);
-  border-radius: 20px;
-  position: relative;
-}
-.wheel {
-  width: 4px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 4px;
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scrollWheel 1.5s infinite;
-}
-@keyframes scrollWheel {
-  0% {
-    top: 6px;
-    opacity: 1;
-  }
-  100% {
-    top: 20px;
-    opacity: 0;
-  }
-}
-
-/* Animasi Masuk Awal (On Load) */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s forwards ease-out;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-10px);
   }
 }
 
 /* ========================================= */
-/* SCROLLING BANNER (MARQUEE)                */
+/* SCROLLING BANNER                          */
 /* ========================================= */
 .scrolling-banner {
   background: var(--primary);
@@ -472,62 +466,137 @@ body {
 }
 
 /* ========================================= */
-/* HIGHLIGHT STATS                           */
+/* STATS WOW EDITION (UPGRADED MIND BLOWING) */
 /* ========================================= */
-.stats-bar {
+.stats-wow {
   position: relative;
   z-index: 10;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
+  margin-top: 10px;
 }
-.glass-stats {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  padding: 35px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s;
+.stats-grid-wow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
-.glass-stats:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-}
-.stat-item {
+
+.stat-card-wow {
+  position: relative;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 24px;
+  padding: 35px 25px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  z-index: 1;
 }
-.stat-icon {
-  font-size: 2.5rem;
+
+/* Glowing Border Animation on Hover */
+.stat-card-wow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    transparent,
+    var(--primary),
+    var(--accent),
+    var(--cyan)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Background Soft Glow */
+.stat-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.08) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.6s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.stat-card-wow:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.stat-card-wow:hover::before,
+.stat-card-wow:hover .stat-glow {
+  opacity: 1;
+}
+
+/* Kartu Edutech di Tengah Dibuat Otomatis Lebih Besar */
+.active-stat {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
+  border: 2px solid white;
+}
+.active-stat:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* Icon Animation Bouncy */
+.stat-icon-wow {
+  width: 70px;
+  height: 70px;
   background: white;
-  width: 60px;
-  height: 60px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
+  font-size: 2.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex-shrink: 0;
+  position: relative;
 }
-.stat-item:hover .stat-icon {
-  transform: scale(1.1) rotate(5deg);
+
+.stat-card-wow:hover .stat-icon-wow {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
 }
-.stat-item h4 {
-  font-size: 1.1rem;
+
+.stat-info-wow h4 {
+  font-size: 1.2rem;
   color: var(--text-dark);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
-.stat-item p {
-  font-size: 0.9rem;
+
+.stat-info-wow p {
+  font-size: 0.95rem;
   color: var(--text-light);
-}
-.divider {
-  width: 1px;
-  height: 50px;
-  background: rgba(0, 0, 0, 0.1);
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 /* ========================================= */
@@ -558,7 +627,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
-
 .artefak-card {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -595,7 +663,6 @@ body {
 .artefak-card:hover::before {
   transform: scaleX(1);
 }
-
 .active-card {
   box-shadow: 0 15px 35px rgba(37, 99, 235, 0.08);
   border-color: rgba(37, 99, 235, 0.2);
@@ -621,7 +688,6 @@ body {
   transform: rotateY(180deg) scale(1.1);
   box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
 }
-
 .artefak-card h3 {
   font-size: 1.4rem;
   color: var(--text-dark);
@@ -633,7 +699,6 @@ body {
   line-height: 1.7;
   flex-grow: 1;
 }
-
 .read-more {
   display: inline-flex;
   align-items: center;
@@ -678,7 +743,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
 .galeri-item {
   position: relative;
   border-radius: 16px;
@@ -693,7 +757,6 @@ body {
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .galeri-overlay {
   position: absolute;
   top: 0;
@@ -719,7 +782,6 @@ body {
 .galeri-item:hover .galeri-overlay {
   opacity: 1;
 }
-
 .overlay-text {
   transform: translateY(20px);
   transition: transform 0.4s ease;
@@ -736,7 +798,6 @@ body {
   color: #cbd5e1;
   font-size: 0.9rem;
 }
-
 .zoom-btn {
   position: absolute;
   top: 20px;
@@ -762,14 +823,13 @@ body {
 .zoom-btn:hover {
   background: var(--primary);
 }
-
 .galeri-footer {
   text-align: center;
   margin-top: 50px;
 }
 
 /* ========================================= */
-/* WOW NAVBAR & FOOTER KAPSUL (PASTED)       */
+/* WOW NAVBAR & FOOTER KAPSUL (FIXED)        */
 /* ========================================= */
 .navbar {
   position: fixed;
@@ -876,7 +936,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 15px;
+  padding: 10px 15px;
   text-decoration: none;
   color: var(--text-dark);
   border-radius: 12px;
@@ -1076,15 +1136,21 @@ body {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE (MOBILE) */
+/* ========================================= */
+/* RESPONSIVE DESIGN (MOBILE FOTO ON TOP)    */
+/* ========================================= */
 @media (max-width: 1024px) {
   .hero-container {
     flex-direction: column;
     text-align: center;
     margin-top: 30px;
+    gap: 40px;
+  }
+  .hero-text-content h1 {
+    font-size: 3rem;
   }
   .hero-text-content p {
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
   }
   .hero-buttons {
     justify-content: center;
@@ -1092,30 +1158,48 @@ body {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .stats-bar {
-    margin-top: 50px;
-  }
-  .glass-stats {
-    flex-direction: column;
+
+  /* Update Stats untuk Tablet */
+  .stats-grid-wow {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
-  .divider {
-    width: 100%;
-    height: 1px;
+  .active-stat {
+    transform: scale(1);
+  }
+  .active-stat:hover {
+    transform: translateY(-10px);
   }
 }
 
 @media (max-width: 768px) {
+  /* PASTI FOTO DI ATAS TEKS DI MOBILE */
+  .hero-container {
+    flex-direction: column-reverse;
+    margin-top: 30px;
+    gap: 50px;
+  }
   .hero-text-content h1 {
     font-size: 2.5rem;
   }
-  .profile-image,
-  .profile-ring,
-  .profile-showcase {
-    width: 280px;
-    height: 280px;
+
+  /* PENYESUAIAN FRAME FOTO 3X4 DI HP AGAR TIDAK LEBAR */
+  .modern-portrait-container {
+    width: 260px;
+    height: 346px;
   }
 
+  /* Rapatkan lencana agar layar HP tidak geser */
+  .badge-top-left {
+    top: 20px;
+    left: -20px;
+  }
+  .badge-bottom-right {
+    bottom: 20px;
+    right: -20px;
+  }
+
+  /* NAV MOBILE ASLI TETAP AMAN */
   .navbar.scrolled {
     width: 96%;
     left: 2%;
@@ -1185,7 +1269,14 @@ body {
     align-items: center;
     transform: none !important;
   }
+  .dropdown-content a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+  }
 
+  /* FOOTER HP */
   .footer-cta h2 {
     font-size: 2rem;
   }

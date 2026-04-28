@@ -8,12 +8,20 @@
   --primary-light: #60a5fa;
   --primary-dark: #1e40af;
   --accent: #8b5cf6;
+  --cyan: #06b6d4;
   --bg: #f8fafc;
   --text-dark: #0f172a;
   --text-light: #475569;
+  --white: #ffffff;
+  --transition-fast: all 0.3s ease;
+  --transition-slow: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +29,6 @@
   scroll-behavior: smooth;
 }
 
-/* Custom Text Selection */
 ::selection {
   background: var(--primary);
   color: white;
@@ -32,13 +39,15 @@ body {
   background-color: var(--bg);
   color: var(--text-dark);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
+}
+.text-center {
+  text-align: center;
 }
 
 /* ========================================= */
@@ -53,19 +62,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-.reveal-delay-4 {
-  transition-delay: 0.4s;
-}
-
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -126,7 +122,6 @@ body {
   left: 30%;
   animation-delay: -10s;
 }
-
 @keyframes floatBlobs {
   0% {
     transform: translate(0, 0) scale(1);
@@ -141,8 +136,8 @@ body {
 /* ========================================= */
 .hero-modern {
   position: relative;
-  padding: 140px 0 100px;
-  min-height: 95vh;
+  padding: 160px 0 120px;
+  min-height: 90vh; /* Jarak bawah dikurangi agar tidak kosong */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,18 +178,6 @@ body {
   letter-spacing: -1px;
 }
 
-.title-line-wow {
-  width: 100px;
-  height: 5px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: 10px;
-  margin-top: 15px;
-
-  /* Tambahkan ini */
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .text-gradient {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -217,18 +200,6 @@ body {
   to {
     background-position: 300% center;
   }
-}
-
-/* Animasi Mengetik Teks (Typing Wipe) */
-.type-wipe {
-  display: inline-block;
-  clip-path: inset(0 100% 0 0); /* Teks disembunyikan ke arah kanan */
-  animation: wipeRight 0.8s steps(20, end) forwards;
-}
-@keyframes wipeRight {
-  to {
-    clip-path: inset(0 -5% 0 0);
-  } /* Muncul penuh */
 }
 
 .hero-text-content p {
@@ -287,7 +258,7 @@ body {
 }
 
 /* ========================================= */
-/* HERO VISUAL (CLEAN PORTRAIT 3x4 WOW)      */
+/* HERO VISUAL (CLEAN PORTRAIT)              */
 /* ========================================= */
 .hero-visual {
   flex: 0.9;
@@ -296,7 +267,6 @@ body {
   position: relative;
   z-index: 2;
 }
-
 .modern-portrait-container {
   position: relative;
   width: 320px;
@@ -304,8 +274,6 @@ body {
   margin: 0 auto;
   z-index: 10;
 }
-
-/* Glow Bercahaya di Belakang Frame */
 .portrait-glow {
   position: absolute;
   inset: -20px;
@@ -327,7 +295,6 @@ body {
   }
 }
 
-/* Bingkai Kaca Elegan */
 .portrait-frame {
   position: relative;
   width: 100%;
@@ -346,14 +313,18 @@ body {
   transition: transform 0.5s ease;
   animation: floatMain 6s ease-in-out infinite;
 }
-
+.portrait-img-box {
+  position: absolute;
+  inset: 10px;
+  border-radius: 26px;
+  overflow: hidden;
+  animation: floatMain 6s ease-in-out infinite;
+}
 .portrait-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 26px;
 }
-
 @keyframes floatMain {
   0%,
   100% {
@@ -364,13 +335,11 @@ body {
   }
 }
 
-/* Efek Hover 3D Ringan */
 .modern-portrait-container:hover .portrait-frame {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 35px 60px rgba(37, 99, 235, 0.2);
 }
 
-/* LENCANA (BADGES) SEPERTI REFERENSI GAMBAR */
 .badge-clean {
   position: absolute;
   background: #ffffff;
@@ -386,7 +355,6 @@ body {
 .badge-clean:hover {
   transform: translateY(-5px) scale(1.05);
 }
-
 .badge-clean .icon-circle {
   width: 36px;
   height: 36px;
@@ -405,13 +373,11 @@ body {
 }
 
 .bg-blue-grad {
-  background: #2563eb;
+  background: var(--primary);
 }
 .bg-purple-grad {
-  background: #8b5cf6;
+  background: var(--accent);
 }
-
-/* Penempatan Posisi Badge */
 .badge-info {
   top: 40px;
   left: -50px;
@@ -432,29 +398,31 @@ body {
 }
 
 /* ========================================= */
-/* SCROLLING BANNER                          */
+/* SCROLLING BANNER Teks Berjalan            */
 /* ========================================= */
 .scrolling-banner {
-  background: var(--primary);
+  background: linear-gradient(90deg, #0f172a, #1e40af, #0f172a);
+  color: white;
   padding: 15px 0;
   overflow: hidden;
+  display: flex;
   white-space: nowrap;
-  transform: rotate(-1deg) scale(1.02);
-  margin-top: 30px;
-  margin-bottom: 50px;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .scrolling-text {
-  display: inline-block;
-  animation: scrollText 25s linear infinite;
+  display: flex;
+  animation: scrollText 30s linear infinite;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 .scrolling-text span {
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
   margin: 0 30px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
 }
 @keyframes scrollText {
   0% {
@@ -466,13 +434,13 @@ body {
 }
 
 /* ========================================= */
-/* STATS WOW EDITION (UPGRADED MIND BLOWING) */
+/* STATS WOW EDITION                         */
 /* ========================================= */
 .stats-wow {
+  padding: 60px 0 40px;
   position: relative;
   z-index: 10;
-  margin-bottom: 90px;
-  margin-top: 10px;
+  margin-bottom: 40px;
 }
 .stats-grid-wow {
   display: grid;
@@ -496,8 +464,6 @@ body {
   overflow: hidden;
   z-index: 1;
 }
-
-/* Glowing Border Animation on Hover */
 .stat-card-wow::before {
   content: "";
   position: absolute;
@@ -522,8 +488,6 @@ body {
   z-index: 5;
   pointer-events: none;
 }
-
-/* Background Soft Glow */
 .stat-glow {
   position: absolute;
   top: -50%;
@@ -540,19 +504,16 @@ body {
   z-index: -1;
   pointer-events: none;
 }
-
 .stat-card-wow:hover {
   transform: translateY(-12px);
   box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
   background: rgba(255, 255, 255, 0.95);
 }
-
 .stat-card-wow:hover::before,
 .stat-card-wow:hover .stat-glow {
   opacity: 1;
 }
 
-/* Kartu Edutech di Tengah Dibuat Otomatis Lebih Besar */
 .active-stat {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.9);
@@ -563,7 +524,6 @@ body {
   transform: scale(1.05) translateY(-10px);
 }
 
-/* Icon Animation Bouncy */
 .stat-icon-wow {
   width: 70px;
   height: 70px;
@@ -576,14 +536,11 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   flex-shrink: 0;
-  position: relative;
 }
-
 .stat-card-wow:hover .stat-icon-wow {
   transform: scale(1.15) rotate(10deg);
   box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
 }
-
 .stat-info-wow h4 {
   font-size: 1.2rem;
   color: var(--text-dark);
@@ -591,7 +548,6 @@ body {
   font-weight: 800;
   letter-spacing: -0.5px;
 }
-
 .stat-info-wow p {
   font-size: 0.95rem;
   color: var(--text-light);
@@ -600,10 +556,12 @@ body {
 }
 
 /* ========================================= */
-/* SECTION ARTEFAK                           */
+/* ZIG-ZAG ARTEFAK SECTION                   */
 /* ========================================= */
-.artefak-section {
-  padding: 40px 0 80px;
+.zigzag-section {
+  padding: 40px 0 60px;
+  position: relative;
+  z-index: 5;
 }
 .section-title-modern {
   text-align: center;
@@ -622,214 +580,343 @@ body {
   margin: 0 auto;
 }
 
-.artefak-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-.artefak-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-decoration: none;
-  text-align: center;
-  border: 1px solid #e2e8f0;
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition);
-  z-index: 1;
+.zigzag-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
 }
-.artefak-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  transform: scaleX(0);
-  transition: var(--transition);
+.zigzag-row.reverse {
+  flex-direction: row-reverse;
 }
-.artefak-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
-  border-color: white;
-  background: white;
+.zigzag-content {
+  flex: 1;
 }
-.artefak-card:hover::before {
-  transform: scaleX(1);
+.zz-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(37, 99, 235, 0.15);
+  line-height: 1;
+  margin-bottom: 10px;
 }
-.active-card {
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.08);
-  border-color: rgba(37, 99, 235, 0.2);
-  background: white;
+.zigzag-content h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+.zigzag-content p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
 }
 
-.artefak-icon {
-  width: 70px;
-  height: 70px;
-  background: #eff6ff;
+.btn-text {
+  font-weight: 600;
   color: var(--primary);
-  font-size: 1.8rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-  transition: var(--transition);
-}
-.artefak-card:hover .artefak-icon {
-  background: var(--primary);
-  color: white;
-  transform: rotateY(180deg) scale(1.1);
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-}
-.artefak-card h3 {
-  font-size: 1.4rem;
-  color: var(--text-dark);
-  margin-bottom: 15px;
-}
-.artefak-card p {
-  color: var(--text-light);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  flex-grow: 1;
-}
-.read-more {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 25px;
-  font-weight: 700;
-  color: var(--primary);
-  transition: var(--transition);
+  gap: 10px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
 }
-.artefak-card:hover .read-more {
-  gap: 12px;
-}
-
-.card-glow-bg {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(37, 99, 235, 0.05) 0%,
-    transparent 50%
-  );
-  opacity: 0;
-  transition: var(--transition);
-  z-index: -1;
-  pointer-events: none;
-}
-.artefak-card:hover .card-glow-bg {
-  opacity: 1;
+.btn-text:hover {
+  gap: 15px;
+  color: var(--primary-dark);
 }
 
-/* ========================================= */
-/* GALERI FOTO DOKUMENTASI                   */
-/* ========================================= */
-.galeri-section {
-  padding: 40px 0 120px;
-}
-.galeri-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.galeri-item {
+.zigzag-visual {
+  flex: 1;
   position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  height: 250px;
-  cursor: pointer;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.galeri-item img {
+
+/* ========================================= */
+/* ANIMASI FLOAT (MELAYANG)                  */
+/* ========================================= */
+.float-visual-1 {
+  animation: floatBox 6s ease-in-out infinite;
+}
+.float-visual-2 {
+  animation: floatBox 6s ease-in-out infinite 1.5s;
+}
+.float-visual-3 {
+  animation: floatBox 6s ease-in-out infinite 3s;
+}
+
+@keyframes floatBox {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ========================================= */
+/* 3D FLIP CARD SETUP                        */
+/* ========================================= */
+
+/* Wrapper untuk menentukan prespektif 3D */
+.visual-wrapper {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/3;
+  perspective: 1500px; /* Memberikan kedalaman 3D */
+  position: relative;
+  z-index: 2;
+}
+
+/* Card Container yang akan berputar */
+.visual-card {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 30px;
 }
-.galeri-overlay {
+
+/* Styling Face (Depan & Belakang) */
+.card-face {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.9) 0%,
-    rgba(15, 23, 42, 0.2) 60%,
-    transparent 100%
-  );
+  backface-visibility: hidden; /* Sembunyikan sisi belakang saat berputar */
+  -webkit-backface-visibility: hidden;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 25px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.galeri-item:hover img {
-  transform: scale(1.1);
-}
-.galeri-item:hover .galeri-overlay {
-  opacity: 1;
-}
-.overlay-text {
-  transform: translateY(20px);
-  transition: transform 0.4s ease;
-}
-.galeri-item:hover .overlay-text {
-  transform: translateY(0);
-}
-.overlay-text h4 {
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-.overlay-text p {
-  color: #cbd5e1;
-  font-size: 0.9rem;
-}
-.zoom-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  color: white;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  text-decoration: none;
-  transform: scale(0.5);
-  opacity: 0;
-  transition: all 0.4s ease;
+  align-items: center;
+  overflow: hidden;
 }
-.galeri-item:hover .zoom-btn {
-  transform: scale(1);
-  opacity: 1;
+
+/* Sisi Depan */
+.card-front {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(37, 99, 235, 0.2);
 }
-.zoom-btn:hover {
+
+.card-front.card-accent {
+  background: var(--accent);
+  border: none;
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3);
+}
+
+/* Sisi Belakang */
+.card-back {
   background: var(--primary);
+  transform: rotateY(180deg); /* Membalik sisi belakang di awal */
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
 }
-.galeri-footer {
-  text-align: center;
-  margin-top: 50px;
+
+/* Arah putaran sisi belakang untuk zigzag reverse */
+.zigzag-row.reverse .card-back {
+  transform: rotateY(-180deg);
+}
+
+.card-back.back-accent {
+  background: #1e293b; /* Warna gelap agar kontras dengan accent */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Teks di Sisi Belakang */
+.back-text {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+
+/* Ikon Utama */
+.big-icon {
+  font-size: 5rem;
+  color: var(--primary);
+  position: relative;
+  z-index: 1;
+}
+.big-icon-light {
+  font-size: 5rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Latar Belakang Cahaya Di dalam Visual Card (Depan) */
+.card-glow-bg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: var(--primary-light);
+  filter: blur(50px);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulseGlow 4s infinite alternate;
+}
+.bg-accent-glow {
+  background: #ffffff;
+  opacity: 0.2;
+}
+
+/* Dekorasi Luar (Tidak ikut berputar) */
+.card-decor {
+  position: absolute;
+  border-radius: 20px;
+  z-index: -1;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.decor-1 {
+  width: 100%;
+  height: 100%;
+  background: var(--primary-light);
+  top: 20px;
+  right: -20px;
+  opacity: 0.3;
+}
+.decor-2 {
+  width: 100%;
+  height: 100%;
+  border: 3px dashed var(--accent);
+  top: -20px;
+  left: -20px;
+}
+.decor-3 {
+  width: 80%;
+  height: 120%;
+  background: rgba(37, 99, 235, 0.15);
+  top: -10%;
+  right: -10%;
+  border-radius: 50%;
+  filter: blur(30px);
 }
 
 /* ========================================= */
-/* WOW NAVBAR & FOOTER KAPSUL (FIXED)        */
+/* EFEK HOVER: FLIP TRIGGER                  */
+/* ========================================= */
+
+/* Hentikan efek float saat di-hover dan putar kartu 180 derajat */
+.visual-wrapper:hover {
+  animation-play-state: paused;
+}
+.visual-wrapper:hover .visual-card {
+  transform: rotateY(180deg);
+}
+
+/* Untuk card yang reverse, putar ke arah berlawanan agar lebih dinamis */
+.zigzag-row.reverse .visual-wrapper:hover .visual-card {
+  transform: rotateY(-180deg);
+}
+
+/* Berikan efek pergerakan pada dekorasi di belakangnya saat card berputar */
+.visual-wrapper:hover .decor-1 {
+  top: 35px;
+  right: -35px;
+  transform: scale(1.05);
+}
+.visual-wrapper:hover .decor-2 {
+  top: -35px;
+  left: -35px;
+  transform: scale(1.05);
+}
+.visual-wrapper:hover .decor-3 {
+  top: -15%;
+  right: -15%;
+  transform: scale(1.05);
+}
+/* ========================================= */
+/* EXPANDING GALERI (FIX HOVER & MOBILE)     */
+/* ========================================= */
+.expanding-gallery-section {
+  padding: 20px 0 80px;
+}
+.expanding-gallery {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.panel {
+  flex: 1; /* Diubah jadi 1 agar rata */
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+/* Hanya gunakan class active dari JS agar tidak bentrok */
+.panel.active {
+  flex: 4;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+}
+
+.panel-content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.2s;
+  white-space: nowrap;
+}
+.panel.active .panel-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.panel-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.panel-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.panel-content p {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.galeri-footer {
+  text-align: center;
+}
+
+/* ========================================= */
+/* WOW NAVBAR & FOOTER KAPSUL                */
 /* ========================================= */
 .navbar {
   position: fixed;
@@ -1001,6 +1088,7 @@ body {
   bottom: -200px;
   right: -200px;
 }
+
 .footer-container {
   position: relative;
   z-index: 1;
@@ -1029,6 +1117,7 @@ body {
   font-size: 1.2rem;
   color: #94a3b8;
 }
+
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -1049,6 +1138,7 @@ body {
   line-height: 1.8;
   margin-bottom: 30px;
 }
+
 .social-neon {
   display: flex;
   gap: 15px;
@@ -1073,6 +1163,7 @@ body {
   transform: translateY(-5px);
   border-color: var(--primary);
 }
+
 .footer-links h4,
 .footer-contact h4 {
   font-size: 1.2rem;
@@ -1110,6 +1201,7 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+
 .footer-contact p {
   color: #94a3b8;
   margin-bottom: 15px;
@@ -1128,6 +1220,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
 }
+
 .footer-copyright {
   text-align: center;
   padding-top: 30px;
@@ -1137,7 +1230,7 @@ body {
 }
 
 /* ========================================= */
-/* RESPONSIVE DESIGN (MOBILE FOTO ON TOP)    */
+/* RESPONSIVE & MOBILE (FIXED LAYOUTS)       */
 /* ========================================= */
 @media (max-width: 1024px) {
   .hero-container {
@@ -1159,7 +1252,6 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Update Stats untuk Tablet */
   .stats-grid-wow {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1170,36 +1262,46 @@ body {
   .active-stat:hover {
     transform: translateY(-10px);
   }
+
+  .zigzag-row,
+  .zigzag-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  .zigzag-visual {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-  /* PASTI FOTO DI ATAS TEKS DI MOBILE */
+  .hero-modern {
+    min-height: auto;
+    padding: 140px 0 50px;
+  }
   .hero-container {
     flex-direction: column-reverse;
-    margin-top: 30px;
     gap: 50px;
   }
   .hero-text-content h1 {
     font-size: 2.5rem;
   }
 
-  /* PENYESUAIAN FRAME FOTO 3X4 DI HP AGAR TIDAK LEBAR */
   .modern-portrait-container {
     width: 260px;
     height: 346px;
   }
-
-  /* Rapatkan lencana agar layar HP tidak geser */
-  .badge-top-left {
+  .badge-info {
     top: 20px;
     left: -20px;
   }
-  .badge-bottom-right {
+  .badge-uny {
     bottom: 20px;
     right: -20px;
   }
 
-  /* NAV MOBILE ASLI TETAP AMAN */
+  /* Navbar Mobile */
   .navbar.scrolled {
     width: 96%;
     left: 2%;
@@ -1276,7 +1378,51 @@ body {
     padding: 10px;
   }
 
-  /* FOOTER HP */
+  /* FIX: Artefak Mobile */
+  .visual-card {
+    max-width: 100%;
+    aspect-ratio: auto;
+    height: 260px;
+  }
+  .zz-number {
+    font-size: 3rem;
+  }
+
+  /* FIX: Expanding Gallery di HP agar rapi dan tidak bentrok animasi */
+  .expanding-gallery {
+    flex-direction: column;
+    height: 600px;
+    gap: 10px;
+  }
+  .panel {
+    flex: 1;
+    border-radius: 15px;
+    width: 100%;
+    transition: flex 0.5s ease;
+  }
+  .panel.active {
+    flex: 4;
+  }
+  .panel-content {
+    white-space: normal;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  .panel-content h3 {
+    font-size: 1.2rem;
+  }
+  .panel-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  .panel-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
   .footer-cta h2 {
     font-size: 2rem;
   }
