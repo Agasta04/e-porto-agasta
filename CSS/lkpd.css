@@ -24,6 +24,7 @@ body {
   background-color: var(--bg);
   color: var(--text-dark);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ========================================= */
@@ -40,6 +41,7 @@ body {
   pointer-events: none;
   background-color: #f8fafc;
 }
+
 .mesh-blob {
   position: absolute;
   border-radius: 50%;
@@ -47,6 +49,7 @@ body {
   opacity: 0.5;
   animation: floatBlobs 20s infinite alternate ease-in-out;
 }
+
 .blob-blue {
   width: 600px;
   height: 600px;
@@ -80,8 +83,16 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .blob-blue,
+  .blob-purple,
+  .blob-cyan {
+    transform: scale(0.6);
+  }
+}
+
 /* ========================================= */
-/* MAIN CONTENT                              */
+/* MAIN CONTENT & HEADER                     */
 /* ========================================= */
 .page-wrapper {
   padding: 60px 5% 100px;
@@ -91,7 +102,6 @@ body {
   align-items: center;
 }
 
-/* Header Text */
 .page-header {
   text-align: center;
   max-width: 800px;
@@ -130,7 +140,9 @@ body {
   line-height: 1.6;
 }
 
-/* --- Bento Grid (Untuk Identitas) --- */
+/* ========================================= */
+/* IDENTITAS (BENTO GRID - 3 Kolom)          */
+/* ========================================= */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -179,7 +191,145 @@ body {
   font-weight: 800;
 }
 
-/* --- Document Card --- */
+/* ========================================= */
+/* NEW: ANALISIS LKPD (2x2 GRID + NEON BORDER)*/
+/* ========================================= */
+.lkpd-analysis-section {
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 80px;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 Format */
+  gap: 30px;
+}
+
+/* Card dengan Neon Berputar */
+.analysis-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 3px; /* Jarak untuk border neon */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease;
+  z-index: 1;
+}
+
+.analysis-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.15);
+}
+
+/* Animasi Putaran Neon di Background Kartu */
+.spinning-border {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    var(--primary),
+    #8b5cf6,
+    #06b6d4
+  );
+  animation: spinGlow 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+@keyframes spinGlow {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.analysis-card:hover .spinning-border {
+  opacity: 1; /* Muncul saat di-hover */
+}
+
+/* Konten putih menutupi bagian tengah */
+.ac-content {
+  position: relative;
+  background: #ffffff;
+  border-radius: 21px;
+  padding: 30px;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.ac-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.ac-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Efek Hover Ikon (Miring & Membesar) */
+.ac-icon i {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.analysis-card:hover .ac-icon i {
+  transform: scale(1.25) rotate(15deg);
+}
+
+/* Warna Gradient Icon */
+.bg-blue {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+}
+.bg-purple {
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+}
+.bg-cyan {
+  background: linear-gradient(135deg, #06b6d4, #0369a1);
+}
+.bg-orange {
+  background: linear-gradient(135deg, #f97316, #c2410c);
+}
+
+.ac-header h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.ac-content p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.ac-content p strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* ========================================= */
+/* Document Card (PDF Section)               */
+/* ========================================= */
 .doc-card {
   background: #ffffff;
   width: 100%;
@@ -242,7 +392,7 @@ body {
   display: block;
 }
 
-/* --- Modern Buttons --- */
+/* Modern Buttons */
 .pdf-actions {
   display: flex;
   gap: 20px;
@@ -282,11 +432,20 @@ body {
   transform: translateY(-3px);
 }
 
-/* --- Animasi Fade Up --- */
+/* --- ANIMASI REVEAL --- */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   animation: obsFadeIn 0.8s ease forwards;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 @keyframes obsFadeIn {
   to {
@@ -294,6 +453,7 @@ body {
     transform: translateY(0);
   }
 }
+
 /* ========================================= */
 /* WOW NAVBAR (FLOATING CAPSULE)             */
 /* ========================================= */
@@ -314,7 +474,6 @@ body {
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* State ketika discroll: Kapsul Melayang */
 .navbar.scrolled {
   top: 20px;
   left: 5%;
@@ -354,7 +513,6 @@ body {
   align-items: center;
 }
 
-/* Menu Links Hover Pill */
 .nav-link,
 .dropbtn {
   text-decoration: none;
@@ -378,7 +536,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* WOW Dropdown Animation (DESKTOP) */
 .dropdown {
   position: relative;
 }
@@ -428,7 +585,6 @@ body {
   transform: translateX(5px);
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -444,15 +600,12 @@ body {
   transition: 0.3s;
 }
 
-/* PASTIKAN KONTEN HALAMAN TURUN (Karena Navbar Fixed) */
-.page-wrapper,
-.model-guru-wrapper,
-.refleksi-page {
+.page-wrapper {
   padding-top: 140px;
 }
 
 /* ========================================= */
-/* EPIC GLOW FOOTER (DARK MODE)              */
+/* EPIC GLOW FOOTER                          */
 /* ========================================= */
 .epic-footer {
   position: relative;
@@ -626,17 +779,14 @@ body {
 }
 
 /* ========================================= */
-/* RESPONSIVE NAVBAR, CONTENT & FOOTER       */
+/* RESPONSIVE DESIGN                         */
 /* ========================================= */
-
-/* --- TABLET BESAR (max-width: 1024px) --- */
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* --- TABLET MENENGAH (max-width: 968px) --- */
 @media (max-width: 968px) {
   .page-title {
     font-size: 2.5rem;
@@ -646,6 +796,9 @@ body {
   }
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr;
   }
   .pdf-actions {
     flex-direction: column;
@@ -657,9 +810,7 @@ body {
   }
 }
 
-/* --- MOBILE & TABLET KECIL (max-width: 768px) --- */
 @media (max-width: 768px) {
-  /* NAVBAR MOBILE (Prioritas Kode Atas) */
   .navbar.scrolled {
     width: 96%;
     left: 2%;
@@ -689,13 +840,11 @@ body {
   .navbar.scrolled .nav-right {
     top: 80px;
   }
-
   .nav-right.active {
     left: 0;
     opacity: 1;
     visibility: visible;
   }
-
   .nav-link,
   .dropbtn {
     width: 90%;
@@ -704,7 +853,6 @@ body {
     text-align: center;
   }
 
-  /* DROPDOWN MENU MOBILE */
   .dropdown {
     width: 100%;
     display: flex;
@@ -746,7 +894,6 @@ body {
     margin-bottom: 0;
   }
 
-  /* FOOTER MOBILE (Gabungan) */
   .footer-cta h2 {
     font-size: 2rem;
   }
@@ -759,29 +906,15 @@ body {
   .footer-brand .footer-desc {
     margin: 0 auto 30px;
   }
-  .footer-col h4::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
   .social-neon,
-  .social-links {
-    justify-content: center;
-  }
-  .footer-links a {
-    justify-content: center;
-  }
+  .social-links,
+  .footer-links a,
   .footer-contact p {
     justify-content: center;
   }
 }
 
-/* --- MOBILE SANGAT KECIL (max-width: 600px) --- */
 @media (max-width: 600px) {
-  .blob-blue,
-  .blob-purple,
-  .blob-cyan {
-    transform: scale(0.6);
-  }
   .bento-grid {
     grid-template-columns: 1fr;
   }

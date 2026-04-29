@@ -12,7 +12,11 @@
     />
   </head>
   <body>
-    <div class="mesh-bg"></div>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-blue"></div>
+      <div class="mesh-blob blob-purple"></div>
+      <div class="mesh-blob blob-cyan"></div>
+    </div>
 
     <header class="navbar" id="navbar">
       <div class="nav-left">
@@ -31,7 +35,7 @@
         <a href="profile.html" class="nav-link">Profil</a>
 
         <div class="dropdown">
-          <button class="dropbtn">
+          <button class="dropbtn active">
             Artefak <i class="fa-solid fa-chevron-down chevron"></i>
           </button>
           <div class="dropdown-content">
@@ -54,11 +58,6 @@
     </header>
 
     <main class="page-wrapper">
-      <div class="mesh-bg">
-        <div class="mesh-blob blob-blue"></div>
-        <div class="mesh-blob blob-purple"></div>
-        <div class="mesh-blob blob-cyan"></div>
-      </div>
       <section class="page-header fade-up">
         <span class="badge">Artefak PPL 1</span>
         <h1 class="page-title">
@@ -103,25 +102,118 @@
           </div>
         </div>
 
+        <div class="bento-item fade-up" style="animation-delay: 0.4s">
+          <i class="fa-solid fa-project-diagram"></i>
+          <div class="bento-content">
+            <label>Model Pembelajaran</label>
+            <h3>Project Based Learning</h3>
+          </div>
+        </div>
+
         <div class="bento-item fade-up" style="animation-delay: 0.5s">
           <i class="fa-solid fa-user-pen"></i>
           <div class="bento-content">
             <label>Penyusun</label>
-            <h3>Agasta Pratama Nugraha, S.Kom</h3>
+            <h3>Agasta Pratama Nugraha</h3>
           </div>
         </div>
       </div>
 
-      <div class="doc-card fade-up" style="animation-delay: 0.6s">
+      <section
+        class="ma-analysis-section fade-up"
+        style="animation-delay: 0.6s"
+      >
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-blue">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Konteks Pengembangan</h3>
+              </div>
+              <p>
+                Modul ini disusun untuk merespons karakteristik peserta didik
+                SMAN 4 Yogyakarta yang mayoritas memiliki gaya belajar
+                <strong>kinestetik dan visual</strong>. Materi difokuskan pada
+                pemanfaatan media digital karena tingginya eksposur siswa
+                terhadap teknologi komunikasi dan informasi di keseharian.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-purple">
+                  <i class="fa-solid fa-flag-checkered"></i>
+                </div>
+                <h3>Tujuan Pembelajaran</h3>
+              </div>
+              <p>
+                Membimbing siswa agar mampu merancang, memproduksi, dan
+                <strong>mendiseminasikan konten digital</strong> secara
+                kolaboratif. Selain itu, bertujuan agar siswa cakap dalam
+                partisipasi digital, menyaring informasi, dan menerapkan etika
+                literasi digital secara bertanggung jawab.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-cyan">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h3>Kelebihan Pendekatan</h3>
+              </div>
+              <p>
+                Mengadopsi pendekatan praktik langsung dan kerja kelompok yang
+                mengakomodasi profil pembelajar aktif. Desain instruksional ini
+                memuat langkah-langkah yang jelas dengan
+                <strong>integrasi TPACK</strong> pada pembelajaran, sehingga
+                pembelajaran tidak monoton dan berpusat pada murid.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-orange">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3>Tantangan Pelaksanaan</h3>
+              </div>
+              <p>
+                Kendala utama terletak pada
+                <strong>variasi tingkat fokus siswa</strong> yang cenderung
+                menurun drastis di jam-jam akhir pelajaran. Diperlukan
+                intervensi kinestetik tambahan seperti
+                <strong>ice-breaking</strong> serta pengawasan merata agar
+                seluruh anggota kelompok berkontribusi aktif.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="doc-card fade-up" style="animation-delay: 0.8s">
         <h3 class="doc-title">
-          <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i> Pratinjau
+          <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i>
           Dokumen Modul Ajar
         </h3>
         <hr class="dashed-divider" />
 
         <div class="pdf-container">
           <iframe
-            src="Dokumen/modulajar.pdf"
+            src="Dokumen/modulajarcoba.pdf"
             title="Modul Ajar"
             loading="lazy"
           ></iframe>
@@ -129,7 +221,7 @@
 
         <div class="pdf-actions">
           <a
-            href="Dokumen/modulajar.pdf"
+            href="Dokumen/modulajarcoba.pdf"
             target="_blank"
             class="btn-modern btn-main"
           >
@@ -137,7 +229,7 @@
             <i class="fa-solid fa-up-right-from-square"></i>
           </a>
           <a
-            href="Dokumen/modulajar.pdf"
+            href="Dokumen/modulajarcoba.pdf"
             download="Modul_Ajar_Informatika.pdf"
             class="btn-modern btn-sub"
           >
@@ -230,7 +322,10 @@
         </div>
 
         <div class="footer-copyright">
-          <p>© 2026 Agasta Pratama Nugraha. All Rights Reserved.</p>
+          <p>
+            © 2026 E-Portofolio PPG Prajabatan Informatika | Agasta Pratama
+            Nugraha
+          </p>
         </div>
       </div>
     </footer>
@@ -254,7 +349,20 @@
         hamburger.classList.toggle("active");
       });
 
-      // Jika di halaman tersebut ada script animasi (reveal), biarkan script reveal yang lama tetap ada di bawah ini.
+      // 3. Reveal Animasi Fade Up
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal, .fade-up");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 50;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
     </script>
   </body>
 </html>
