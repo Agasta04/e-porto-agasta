@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.png" type="image/png" />
+    <title>Artefak Pembelajaran | E-Portofolio PPG</title>
+    <link rel="stylesheet" href="CSS/artefak.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-blue"></div>
+      <div class="mesh-blob blob-purple"></div>
+      <div class="mesh-blob blob-cyan"></div>
+    </div>
+
+    <header class="navbar" id="navbar">
+      <div class="nav-left">
+        <img src="logo.png" alt="Logo PPG" class="logo-img" />
+        <span class="brand-name"
+          >E-Portofolio <span class="highlight">PPG</span></span
+        >
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+
+      <nav class="nav-right" id="nav-menu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="profile.html" class="nav-link">Profil</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">
+            E-Portofolio ( 1 ) <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="artefak.html"
+              ><i class="fa-solid fa-book"></i> Artefak Produk</a
+            >
+            <a href="penilaian.html"
+              ><i class="fa-solid fa-star"></i> Penilaian GP</a
+            >
+            <a href="modelguru.html"
+              ><i class="fa-solid fa-camera-retro"></i> Model Guru</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">
+            E-Portofolio ( 2 ) <i class="fa-solid fa-chevron-down chevron"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="refleksi.html"
+              ><i class="fa-solid fa-clipboard-user"></i> Refleksi Akhir</a
+            >
+            <a href="filosofi.html"
+              ><i class="fa-solid fa-graduation-cap"></i> Filosofi Mengajar</a
+            >
+          </div>
+        </div>
+
+        <a href="dokumentasi.html" class="nav-link"> Dokumentasi</a>
+      </nav>
+    </header>
+
+    <main class="page-wrapper">
+      <div class="page-header fade-up" style="animation-delay: 0.1s">
+        <span class="badge">Kumpulan Artefak PPL 1</span>
+        <h1 class="page-title">
+          Artefak <span class="text-gradient">Pembelajaran</span>
+        </h1>
+        <p class="page-subtitle">
+          Dokumentasi komprehensif mulai dari observasi lingkungan belajar,
+          perancangan Modul Ajar dan LKPD, hingga refleksi produk pembelajaran
+          di SMAN 4 Yogyakarta.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item fade-up" style="animation-delay: 0.2s">
+          <i class="fa-solid fa-school"></i>
+          <div class="bento-content">
+            <label>Sekolah Mitra</label>
+            <h3>SMAN 4 Yogyakarta</h3>
+          </div>
+        </div>
+
+        <div class="bento-item fade-up" style="animation-delay: 0.3s">
+          <i class="fa-solid fa-laptop-code"></i>
+          <div class="bento-content">
+            <label>Mata Pelajaran</label>
+            <h3>Informatika (Fase E)</h3>
+          </div>
+        </div>
+
+        <div class="bento-item fade-up" style="animation-delay: 0.4s">
+          <i class="fa-solid fa-user-graduate"></i>
+          <div class="bento-content">
+            <label>Penyusun</label>
+            <h3>Agasta Pratama Nugraha</h3>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider fade-up" style="animation-delay: 0.5s" />
+
+      <div class="tabs-container fade-up" style="animation-delay: 0.6s">
+        <button
+          class="tab-btn active"
+          onclick="openTab(event, 'tab-observasi')"
+        >
+          <i class="fa-solid fa-search"></i> Observasi
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-modul')">
+          <i class="fa-solid fa-book"></i> Modul Ajar
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-lkpd')">
+          <i class="fa-solid fa-file-pen"></i> LKPD
+        </button>
+      </div>
+
+      <section id="tab-observasi" class="tab-content active">
+        <div class="section-title text-center">
+          <h2 class="page-title" style="font-size: 2.2rem">
+            Observasi Sekolah
+            <span class="text-gradient">& Lingkungan Belajar</span>
+          </h2>
+          <p class="page-subtitle">
+            Laporan hasil pengamatan karakteristik peserta didik, lingkungan
+            belajar, dan budaya sekolah selama pelaksanaan PPL 1.
+          </p>
+        </div>
+
+        <div class="scouting-grid">
+          <div class="scout-card">
+            <div class="scout-header bg-gradient-blue">
+              <i class="fa-solid fa-users-rays"></i>
+              <h3>Karakteristik Murid</h3>
+            </div>
+            <div class="scout-body">
+              <ul class="scout-list">
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <div>
+                    <strong>Keaktifan Belajar:</strong
+                    ><span
+                      >Siswa menunjukkan keaktifan dan kemampuan bekerja sama
+                      yang baik.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    style="color: #f97316"
+                  ></i>
+                  <div>
+                    <strong>Tantangan Fokus:</strong
+                    ><span
+                      >Fokus siswa cenderung menurun drastis pada jam-jam akhir
+                      pelajaran.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <div>
+                    <strong>Gaya Belajar:</strong
+                    ><span
+                      >Membutuhkan strategi variatif berbasis kinestetik agar
+                      keterlibatan terjaga.</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="scout-footer">
+              <span class="scout-tag">Target: Pembelajaran Variatif</span>
+            </div>
+          </div>
+
+          <div class="scout-card">
+            <div class="scout-header bg-gradient-purple">
+              <i class="fa-solid fa-landmark-dome"></i>
+              <h3>Kultur & Lingkungan Sekolah</h3>
+            </div>
+            <div class="scout-body">
+              <ul class="scout-list">
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <div>
+                    <strong>Lingkungan Fisik:</strong
+                    ><span
+                      >Nyaman dan bersih, namun tata letak kelas KKO masih
+                      kurang beraturan.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <div>
+                    <strong>Sosial & Religius:</strong
+                    ><span
+                      >Kolaborasi guru harmonis. Terdapat pembiasaan IMTAK rutin
+                      setiap hari selasa & kamis.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    style="color: #f97316"
+                  ></i>
+                  <div>
+                    <strong>Aspek Afektif:</strong
+                    ><span
+                      >Sikap respek siswa terhadap guru di dalam kelas perlu
+                      ditingkatkan.</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="scout-footer">
+              <span class="scout-tag">Target: Penguatan Karakter</span>
+            </div>
+          </div>
+
+          <div class="scout-card">
+            <div class="scout-header bg-gradient-cyan">
+              <i class="fa-solid fa-desktop"></i>
+              <h3>Sarana & Prasarana</h3>
+            </div>
+            <div class="scout-body">
+              <ul class="scout-list">
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <div>
+                    <strong>Fasilitas Penunjang:</strong
+                    ><span
+                      >Didukung oleh Proyektor LCD, CCTV pengawas, dan jaringan
+                      Wifi.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <div>
+                    <strong>Ketersediaan PC Lab:</strong
+                    ><span
+                      >Rasio komputer 1:1 (1 PC untuk 1 murid), sangat mendukung
+                      Pair Programming.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    style="color: #f97316"
+                  ></i>
+                  <div>
+                    <strong>Catatan Khusus:</strong
+                    ><span
+                      >Proyektor utama sesekali blank screen, perlu disiapkan
+                      media interaktif cadangan.</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="scout-footer">
+              <span class="scout-tag">Target: Pair Programming</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <h3 class="doc-title">
+            <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i> A.
+            Laporan Observasi Manajemen Sekolah
+          </h3>
+          <hr class="dashed-divider" />
+          <div class="pdf-container">
+            <iframe
+              src="Dokumen/observasi1.pdf"
+              title="Laporan Observasi 1"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="pdf-actions">
+            <a
+              href="Dokumen/observasi1.pdf"
+              target="_blank"
+              class="btn-modern btn-main"
+              ><span>Buka Penuh</span>
+              <i class="fa-solid fa-up-right-from-square"></i
+            ></a>
+            <a
+              href="Dokumen/observasi1.pdf"
+              download="Observasi_Manajemen.pdf"
+              class="btn-modern btn-sub"
+              ><span>Unduh File</span> <i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <h3 class="doc-title">
+            <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i> B.
+            Laporan Observasi Lingkungan Belajar
+          </h3>
+          <hr class="dashed-divider" />
+          <div class="pdf-container">
+            <iframe
+              src="Dokumen/observasi2.pdf"
+              title="Laporan Observasi 2"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="pdf-actions">
+            <a
+              href="Dokumen/observasi2.pdf"
+              target="_blank"
+              class="btn-modern btn-main"
+              ><span>Buka Penuh</span>
+              <i class="fa-solid fa-up-right-from-square"></i
+            ></a>
+            <a
+              href="Dokumen/observasi2.pdf"
+              download="Observasi_Lingkungan.pdf"
+              class="btn-modern btn-sub"
+              ><span>Unduh File</span> <i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-modul" class="tab-content">
+        <div class="section-title text-center">
+          <h2 class="page-title" style="font-size: 2.2rem">
+            Modul Ajar <span class="text-gradient">Informatika</span>
+          </h2>
+          <p class="page-subtitle">
+            Dokumen rancangan pembelajaran yang telah disusun dan diterapkan
+            selama pelaksanaan PPL 1.
+          </p>
+        </div>
+
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-blue">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Konteks Pengembangan</h3>
+              </div>
+              <p>
+                Modul ini disusun untuk merespons karakteristik murid SMAN 4
+                Yogyakarta yang mayoritas memiliki gaya belajar
+                <strong>kinestetik dan visual</strong>. Materi difokuskan pada
+                pemanfaatan media digital karena tingginya eksposur murid
+                terhadap teknologi komunikasi dan informasi di keseharian.
+              </p>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-purple">
+                  <i class="fa-solid fa-flag-checkered"></i>
+                </div>
+                <h3>Tujuan Pembelajaran</h3>
+              </div>
+              <p>
+                Membimbing murid agar mampu merancang, memproduksi, dan
+                <strong>mendiseminasikan konten digital</strong> secara
+                kolaboratif. Selain itu, bertujuan agar murid cakap dalam
+                partisipasi digital, menyaring informasi, dan menerapkan etika
+                literasi digital secara bertanggung jawab.
+              </p>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-cyan">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h3>Kelebihan Pendekatan</h3>
+              </div>
+              <p>
+                Mengadopsi pendekatan praktik langsung dan kerja kelompok yang
+                mengakomodasi profil pembelajar aktif. Desain instruksional ini
+                memuat langkah-langkah yang jelas dengan
+                <strong>integrasi TPACK</strong> pada pembelajaran, sehingga
+                pembelajaran tidak monoton dan berpusat pada murid.
+              </p>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-orange">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3>Tantangan Pelaksanaan</h3>
+              </div>
+              <p>
+                Kendala utama terletak pada
+                <strong> variasi tingkat fokus murid </strong> yang cenderung
+                menurun drastis di jam-jam akhir pelajaran. Diperlukan
+                intervensi kinestetik tambahan seperti
+                <strong> ice-breaking </strong> serta pengawasan merata agar
+                seluruh anggota kelompok berkontribusi aktif.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <h3 class="doc-title">
+            <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i>
+            Pratinjau Dokumen Modul Ajar
+          </h3>
+          <hr class="dashed-divider" />
+          <div class="pdf-container">
+            <iframe
+              src="Dokumen/modulajar.pdf"
+              title="Modul Ajar"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="pdf-actions">
+            <a
+              href="Dokumen/modulajar.pdf"
+              target="_blank"
+              class="btn-modern btn-main"
+              ><span>Buka Penuh</span>
+              <i class="fa-solid fa-up-right-from-square"></i
+            ></a>
+            <a
+              href="Dokumen/modulajar.pdf"
+              download="Modul_Ajar_Informatika.pdf"
+              class="btn-modern btn-sub"
+              ><span>Unduh File</span> <i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-lkpd" class="tab-content">
+        <div class="section-title text-center">
+          <h2 class="page-title" style="font-size: 2.2rem">
+            Lembar Kerja Peserta Didik <span class="text-gradient">(LKPD)</span>
+          </h2>
+          <p class="page-subtitle">
+            Panduan kolaboratif berbasis Project-Based Learning (PjBL) yang
+            dirancang untuk membimbing peserta didik SMA Negeri 4 Yogyakarta
+            dalam merancang konten digital yang kreatif, inovatif, dan beretika.
+          </p>
+        </div>
+
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-blue">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Konteks Pengembangan</h3>
+              </div>
+              <p>
+                LKPD ini disusun sebagai panduan operasional pada
+                <strong>Pertemuan 1 (Perencanaan Proyek)</strong>. Didesain
+                secara spesifik untuk memfasilitasi proses Brainstorming ide
+                secara terstruktur agar murid tidak kebingungan saat menentukan
+                jenis, tema, dan target audiens konten mereka.
+              </p>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-purple">
+                  <i class="fa-solid fa-flag-checkered"></i>
+                </div>
+                <h3>Tujuan Instruksional</h3>
+              </div>
+              <p>
+                Memandu murid merancang konten digital yang edukatif melalui
+                pembagian peran yang adil dalam tim
+                <strong>(Ketua, Pencari Materi, Desainer, Copywriter)</strong>.
+                Melatih keterampilan manajerial proyek, mulai dari penentuan
+                aplikasi (tools), rancangan (storyboard), hingga refleksi.
+              </p>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-cyan">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h3>Kelebihan Lembar Kerja</h3>
+              </div>
+              <p>
+                Formatnya sangat
+                <strong>sistematis dan berbasis alur (Step-by-step) </strong>.
+                Dengan adanya kolom pengisian spesifik (Pesan Utama, Rancangan
+                Isi, Aplikasi yang digunakan), pemikiran murid akan lebih
+                terarah dan kolaborasi antar anggota kelompok menjadi lebih
+                terukur dan produktif.
+              </p>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <div class="spinning-border"></div>
+            <div class="ac-content">
+              <div class="ac-header">
+                <div class="ac-icon bg-orange">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3>Tantangan Pengerjaan</h3>
+              </div>
+              <p>
+                Tantangan utamanya adalah
+                <strong>alokasi waktu saat berdiskusi</strong>. murid sering
+                kali terlalu lama berdebat di fase penentuan isi konten
+                berdasarkan tema (Brainstorming), sehingga guru perlu proaktif
+                berkeliling sebagai fasilitator untuk memastikan setiap kelompok
+                tetap berpegang pada timeline LKPD.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <h3 class="doc-title">
+            <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i>
+            Pratinjau Dokumen LKPD
+          </h3>
+          <hr class="dashed-divider" />
+          <div class="pdf-container">
+            <iframe src="Dokumen/lkpd.pdf" title="LKPD" loading="lazy"></iframe>
+          </div>
+          <div class="pdf-actions">
+            <a
+              href="Dokumen/lkpd.pdf"
+              target="_blank"
+              class="btn-modern btn-main"
+              ><span>Buka Penuh</span>
+              <i class="fa-solid fa-up-right-from-square"></i
+            ></a>
+            <a
+              href="Dokumen/lkpd.pdf"
+              download="LKPD_Informatika.pdf"
+              class="btn-modern btn-sub"
+              ><span>Unduh File</span> <i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider reveal" />
+
+      <section id="refleksi-produk" class="artefak-section reveal">
+        <div class="section-title text-center" style="margin-bottom: 70px">
+          <h2 class="page-title" style="font-size: 2.5rem">
+            Analisis & Refleksi <br />
+            <span class="text-gradient">Produk Pembelajaran</span>
+          </h2>
+          <p class="page-subtitle">
+            Evaluasi mendalam terhadap proses perancangan, implementasi, hingga
+            penyesuaian perangkat ajar.
+          </p>
+        </div>
+
+        <div class="zigzag-container">
+          <div class="zigzag-row reveal">
+            <div class="zz-visual">
+              <div class="zz-card-3d bg-orange-glow">
+                <div class="zz-inner">
+                  <i class="fa-solid fa-link-slash floating-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="zz-content">
+              <div class="zz-number">A</div>
+              <h3>Kendala Penyusunan</h3>
+              <p>
+                Keterbatasan waktu dalam merumuskan
+                <strong>instrumen penilaian (rubrik) yang komprehensif</strong>
+                untuk mengukur aspek kognitif, afektif, dan psikomotorik secara
+                akurat dalam waktu bersamaan. Selain itu, menyelaraskan materi
+                ajar yang dapat mengakomodasi gaya belajar visual dan kinestetik
+                membutuhkan perencanaan multimedia yang sangat detail dan
+                berlapis.
+              </p>
+            </div>
+          </div>
+
+          <div class="zigzag-row reverse reveal">
+            <div class="zz-visual">
+              <div class="zz-card-3d bg-purple-glow">
+                <div class="zz-inner">
+                  <i class="fa-solid fa-lightbulb floating-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="zz-content">
+              <div class="zz-number">B</div>
+              <h3>Teori & Konsep Pedagogi</h3>
+              <p>
+                Rancangan ini mengadopsi model
+                <strong>Project-Based Learning (PjBL)</strong> yang dipadukan
+                secara holistik dengan kerangka
+                <strong>TPACK</strong> (Technological Pedagogical Content
+                Knowledge). Pendekatan ini juga diperkuat dengan prinsip
+                <em>Pembelajaran Berdiferensiasi Proses</em>, memberikan
+                kebebasan peserta didik mengeksekusi proyek menggunakan berbagai
+                perangkat digital sesuai minat mereka.
+              </p>
+            </div>
+          </div>
+
+          <div class="zigzag-row reveal">
+            <div class="zz-visual">
+              <div class="zz-card-3d bg-blue-glow">
+                <div class="zz-inner">
+                  <i class="fa-solid fa-arrow-trend-up floating-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="zz-content">
+              <div class="zz-number">C</div>
+              <h3>Faktor Keberhasilan</h3>
+              <p>
+                Ketersediaan infrastruktur sekolah yang mumpuni (WiFi &
+                Proyektor) menjadi fondasi dasar yang sangat membantu. Namun,
+                pendorong utama keberhasilan praktik ini adalah
+                <strong>antusiasme tinggi peserta didik</strong> terhadap
+                produksi konten kreatif, didukung dengan pembagian peran
+                terstruktur (Ketua, Desainer, dll) yang mencegah adanya siswa
+                pasif.
+              </p>
+            </div>
+          </div>
+
+          <div class="zigzag-row reverse reveal">
+            <div class="zz-visual">
+              <div class="zz-card-3d bg-cyan-glow">
+                <div class="zz-inner">
+                  <i class="fa-solid fa-sliders floating-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="zz-content">
+              <div class="zz-number">D</div>
+              <h3>Perubahan & Penyesuaian</h3>
+              <p>
+                Berdasarkan evaluasi, kelas dengan tingkat daya fokus yang lebih
+                rentan memerlukan penyesuaian signifikan. Komponen yang diubah
+                meliputi
+                <strong>penyederhanaan durasi fase *brainstorming*</strong>
+                serta penyisipan aktivitas <em>ice-breaking kinestetik</em> yang
+                terjadwal di pertengahan sesi untuk menjaga energi dan
+                konsentrasi kelas tetap optimal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="epic-footer">
+      <div class="footer-orb f-orb-1"></div>
+      <div class="footer-orb f-orb-2"></div>
+
+      <div class="footer-container">
+        <div class="footer-cta reveal">
+          <h2>Mari Ciptakan Pendidikan yang <span>Menginspirasi</span></h2>
+          <p>
+            Mendedikasikan ilmu pengetahuan untuk memajukan kualitas pendidikan
+            Informatika di Indonesia.
+          </p>
+        </div>
+
+        <div class="footer-grid reveal">
+          <div class="footer-brand">
+            <h3 class="footer-logo">E-Portofolio <span>PPG</span></h3>
+            <p class="footer-desc">
+              Portal resmi dokumentasi artefak dan refleksi Program Pendidikan
+              Profesi Guru (PPG) Prajabatan bidang studi Informatika di
+              Universitas Negeri Yogyakarta.
+            </p>
+            <div class="social-neon">
+              <a
+                href="https://www.instagram.com/gas_taa?igsh=Z2g0MWRydm4zNzM4"
+                class="neon-btn"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/agasta-pratama-nugraha?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                class="neon-btn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Navigasi Cepat</h4>
+            <ul>
+              <li>
+                <a href="artefak.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Artefak Produk</a
+                >
+              </li>
+              <li>
+                <a href="penilaian.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Penilaian GP</a
+                >
+              </li>
+              <li>
+                <a href="modelguru.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Model Guru</a
+                >
+              </li>
+              <li>
+                <a href="refleksi.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Refleksi Akhir</a
+                >
+              </li>
+              <li>
+                <a href="filosofi.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Filosofi Mengajar</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>LPTK Kami</h4>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Universitas Negeri
+              Yogyakarta
+            </p>
+            <div class="map-glass">
+              <iframe
+                src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            © 2026 E-Portofolio PPG Prajabatan Informatika | Agasta Pratama
+            Nugraha
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // 1. Floating Navbar Logic
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // 2. Hamburger Menu
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // 3. Tab System Logic
+      function openTab(evt, tabName) {
+        // Prevent default anchor behavior if called from footer
+        if (evt) evt.preventDefault();
+
+        var i, tabcontent, tablinks;
+
+        // Hide all tab contents
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+          tabcontent[i].classList.remove("active");
+        }
+
+        // Remove active class from all buttons
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].classList.remove("active");
+        }
+
+        // Show the specific tab and add active class to clicked button
+        document.getElementById(tabName).style.display = "block";
+
+        // Timeout to allow display:block to apply before animating opacity
+        setTimeout(() => {
+          document.getElementById(tabName).classList.add("active");
+        }, 10);
+
+        if (evt && evt.currentTarget) {
+          evt.currentTarget.classList.add("active");
+        }
+      }
+
+      // 4. Scroll Reveal Animation
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal, .fade-up");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 50;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
+</html>

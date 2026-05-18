@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="logo.png" type="image/png" />
-    <title>E-Portofolio PPG | Agasta Pratama Nugraha</title>
-    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Filosofi Mengajar | E-Portofolio PPG</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-blue"></div>
+      <div class="mesh-blob blob-purple"></div>
+      <div class="mesh-blob blob-cyan"></div>
+    </div>
+    <div class="cyber-grid"></div>
+
     <header class="navbar" id="navbar">
       <div class="nav-left">
         <img src="logo.png" alt="Logo PPG" class="logo-img" />
@@ -19,291 +26,217 @@
           >E-Portofolio <span class="highlight">PPG</span></span
         >
       </div>
-
       <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
       </div>
-
       <nav class="nav-right" id="nav-menu">
-        <a href="index.html" class="nav-link active">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="profile.html" class="nav-link">Profil</a>
-
         <div class="dropdown">
           <button class="dropbtn">
             Artefak <i class="fa-solid fa-chevron-down chevron"></i>
           </button>
           <div class="dropdown-content">
-            <a href="observasi.html"
+            <a href="artefak.html#observasi"
               ><i class="fa-solid fa-search"></i> Observasi</a
             >
-            <a href="modulajar.html"
+            <a href="artefak.html#modulajar"
               ><i class="fa-solid fa-book"></i> Modul Ajar</a
             >
-            <a href="lkpd.html"><i class="fa-solid fa-file-pen"></i> LKPD</a>
+            <a href="artefak.html#lkpd"
+              ><i class="fa-solid fa-file-pen"></i> LKPD</a
+            >
+            <a href="penilaian.html"
+              ><i class="fa-solid fa-star"></i> Penilaian</a
+            >
             <a href="dokumentasi.html"
               ><i class="fa-solid fa-camera-retro"></i> Dokumentasi</a
             >
           </div>
         </div>
-
         <a href="refleksi.html" class="nav-link">Refleksi</a>
-        <a href="modelguru.html" class="nav-link">Model Guru</a>
+        <a href="filosofi.html" class="nav-link active">Filosofi Mengajar</a>
       </nav>
     </header>
 
-    <main class="home-main">
-      <div class="mesh-bg">
-        <div class="mesh-blob blob-blue"></div>
-        <div class="mesh-blob blob-purple"></div>
-        <div class="mesh-blob blob-cyan"></div>
-      </div>
+    <main class="page-wrapper">
+      <section class="hero-intro fade-up">
+        <div class="badge-glow">
+          <span class="badge"
+            ><i class="fa-solid fa-dna"></i> Ideologi Pendidik</span
+          >
+        </div>
+        <h1 class="page-title">
+          Filosofi <span class="text-gradient-animate">Mengajar</span>
+        </h1>
+        <p class="page-subtitle">
+          Teruslah gulir perlahan ke bawah. Bersiaplah menyelami semesta
+          pemikiran, keyakinan, dan DNA saya sebagai guru Informatika
+          profesional abad 21.
+        </p>
+        <div class="scroll-indicator">
+          <p>Gulir untuk Menyelam</p>
+          <i class="fa-solid fa-angles-down animated-bounce"></i>
+        </div>
+      </section>
 
-      <section class="hero-modern">
-        <div class="container hero-container">
-          <div class="hero-text-content">
-            <div class="badge-tech fade-in-up" style="animation-delay: 0.1s">
-              <i class="fa-solid fa-graduation-cap"></i> PPG Prajabatan
-              Informatika UNY
-            </div>
-            <h1 class="fade-in-up" style="animation-delay: 0.3s">
-              Membangun <br />
-              Karakter Melalui <br />
-              <span
-                class="text-gradient-animated type-wipe"
-                style="animation-delay: 0.4s"
-                >Teknologi & Inovasi</span
-              >
-            </h1>
-            <p class="fade-in-up" style="animation-delay: 0.5s">
-              Selamat datang di portal E-Portofolio PPG Prajabatan Informatika.
-              Halaman ini merupakan ruang dokumentasi digital yang merangkum
-              seluruh proses transformasi, perancangan pembelajaran inovatif,
-              serta refleksi kritis selama pelaksanaan Praktik Pengalaman
-              Lapangan (PPL) di sekolah mitra.
-            </p>
+      <section class="scrolly-section" id="scrolly-section">
+        <div class="scrolly-viewport">
+          <div class="dark-universe-overlay" id="dark-overlay"></div>
 
-            <div class="hero-buttons fade-in-up" style="animation-delay: 0.7s">
-              <a href="#dokumen" class="btn-glow">
-                <span>Eksplorasi Artefak</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="profile.html" class="btn-outline-tech">
-                <i class="fa-solid fa-user"></i> Tentang Saya
-              </a>
+          <div class="parallax-layer layer-1" id="layer-1"></div>
+          <div class="parallax-layer layer-2" id="layer-2"></div>
+
+          <div class="story-card" id="card-1">
+            <div class="card-glass-hud">
+              <div class="hud-icon blue-ring">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3>Membangun Manusia Seutuhnya</h3>
+              <p>
+                Selama menjalani proses pembelajaran terbimbing di SMAN 4
+                Yogyakarta, saya memvalidasi keyakinan terdalam saya: pendidikan
+                sejati melampaui sekadar <em>transfer of knowledge</em>. Melalui
+                pengamatan dinamika kelas yang heterogen, saya berpegang teguh
+                bahwa
+                <span class="text-highlight"
+                  >setiap anak adalah semesta kecil dengan potensinya
+                  masing-masing</span
+                >. Tugas utama saya bukanlah bertindak sebagai sumber kebenaran
+                absolut, melainkan sebagai <strong>fasilitator</strong> yang
+                menuntun mereka menemukan pemahaman melalui lingkungan yang
+                aman, inklusif, dan penuh kehangatan.
+              </p>
             </div>
           </div>
 
-          <div class="hero-visual fade-in-up" style="animation-delay: 0.5s">
-            <div class="modern-portrait-container">
-              <div class="portrait-glow"></div>
-
-              <div class="portrait-frame">
-                <img
-                  src="profile.jpeg"
-                  alt="Agasta Pratama Nugraha"
-                  class="portrait-img"
-                />
+          <div class="story-card" id="card-2">
+            <div class="card-glass-hud">
+              <div class="hud-icon purple-ring">
+                <i class="fa-solid fa-microchip"></i>
               </div>
+              <h3>Konstruktivisme & Integrasi TPACK</h3>
+              <p>
+                Akar pedagogi saya bertumpu pada
+                <span class="text-highlight"
+                  >Konstruktivisme Sosial Vygotsky</span
+                >. Belajar adalah proses aktif mengkonstruksi makna melalui
+                kolaborasi. Di era disrupsi ini, kerangka
+                <strong
+                  >TPACK (Technological Pedagogical Content Knowledge)</strong
+                >
+                menjadi kompas saya. Teknologi bukan sekadar "alat bantu",
+                melainkan katalisator yang memerdekakan siswa
+                <em>digital natives</em> untuk berekspresi. Melalui proyek
+                pembuatan konten edukatif, saya berupaya mengakomodasi gaya
+                belajar visual-kinestetik, mengubah konsep Informatika yang
+                abstrak menjadi karya yang berdampak nyata.
+              </p>
+            </div>
+          </div>
 
-              <div class="badge-clean badge-info">
-                <div class="icon-circle bg-blue-grad">
-                  <i class="fa-solid fa-code"></i>
-                </div>
-                <span class="badge-text">Pendidik IT</span>
+          <div class="story-card" id="card-3">
+            <div class="card-glass-hud">
+              <div class="hud-icon cyan-ring">
+                <i class="fa-brands fa-space-awesome"></i>
               </div>
-
-              <div class="badge-clean badge-uny">
-                <div class="icon-circle bg-purple-grad">
-                  <i class="fa-solid fa-university"></i>
-                </div>
-                <span class="badge-text">LPTK UNY</span>
-              </div>
+              <h3>Ideologi Guru Masa Depan</h3>
+              <p>
+                Pada puncaknya, seluruh perjalanan praktik ini mengerucut dan
+                menjangkar kuat pada filosofi agung Ki Hajar Dewantara:
+                <span class="text-highlight"
+                  >"Ing Ngarso Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri
+                  Handayani"</span
+                >. Sebagai pendidik, saya berkomitmen menjadi teladan etika,
+                pemantik semangat berkarya, dan pendorong kemandirian. Filosofi
+                ini menuntut saya untuk terus bermetamorfosis menjadi seorang
+                <strong>Lifelong Learner</strong>, pantang berhenti
+                merefleksikan pedagogi demi menciptakan ekosistem kelas yang
+                senantiasa hidup dan menginspirasi.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="scrolling-banner">
-        <div class="scrolling-text">
-          <span>✨ Pembelajaran Berdiferensiasi</span>
-          <span>🚀 Integrasi TPACK</span>
-          <span>💻 Computational Thinking</span>
-          <span>🎨 Inovasi Media Pembelajaran</span>
-          <span>🌐 Literasi Digital</span>
-          <span>✨ Pembelajaran Berdiferensiasi</span>
-          <span>🚀 Integrasi TPACK</span>
-          <span>💻 Computational Thinking</span>
-          <span>🎨 Inovasi Media Pembelajaran</span>
-          <span>🌐 Literasi Digital</span>
+      <section class="literatur-section container reveal-node">
+        <div
+          class="section-title"
+          style="text-align: center; margin-bottom: 80px; padding-top: 50px"
+        >
+          <h2 class="page-title" style="font-size: 2.5rem; margin-bottom: 10px">
+            Landasan <span class="text-gradient">Literatur Pedagogi</span>
+          </h2>
+          <p
+            class="page-subtitle"
+            style="text-align: center; margin: 0 auto; max-width: 800px"
+          >
+            Teori-teori pendidikan terkemuka yang mengukuhkan keyakinan serta
+            menjadi fondasi logis dari praktik pengajaran saya.
+          </p>
         </div>
-      </div>
 
-      <section class="stats-wow reveal">
-        <div class="container">
-          <div class="stats-grid-wow">
-            <div class="stat-card-wow">
-              <div class="stat-glow"></div>
-              <div class="stat-icon-wow">📖</div>
-              <div class="stat-info-wow">
-                <h4>Program</h4>
-                <p>PPG Prajabatan 2025/2026</p>
-              </div>
-            </div>
-
-            <div class="stat-card-wow active-stat">
-              <div class="stat-glow"></div>
-              <div class="stat-icon-wow">🏫</div>
-              <div class="stat-info-wow">
-                <h4>LPTK</h4>
-                <p>Universitas Negeri Yogyakarta</p>
-              </div>
-            </div>
-
-            <div class="stat-card-wow">
-              <div class="stat-glow"></div>
-              <div class="stat-icon-wow">📍</div>
-              <div class="stat-info-wow">
-                <h4>Sekolah PPL</h4>
-                <p>SMA Negeri 4 Yogyakarta</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="dokumen" class="artefak-section">
-        <div class="container">
-          <div class="section-title-modern reveal">
-            <h2>Ruang <span class="text-gradient">Karya & Artefak</span></h2>
-            <p>
-              Dokumentasi terstruktur yang mencakup hasil observasi, perangkat
-              pembelajaran, dan evaluasi praktik mengajar selama masa pendidikan
-              profesi.
-            </p>
-            <div class="title-line-wow mx-auto"></div>
-          </div>
-
-          <div class="artefak-grid">
-            <a href="observasi.html" class="artefak-card reveal reveal-delay-1">
-              <div class="card-glow-bg"></div>
-              <div class="artefak-icon">
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-              </div>
-              <h3>Laporan Observasi</h3>
-              <p>
-                Analisis mendalam mengenai lingkungan belajar, budaya sekolah,
-                serta karakteristik peserta didik di sekolah mitra.
-              </p>
-              <span class="read-more"
-                >Lihat Detail <i class="fa-solid fa-arrow-right"></i
-              ></span>
-            </a>
-
-            <a
-              href="modulajar.html"
-              class="artefak-card active-card reveal reveal-delay-2"
-            >
-              <div class="card-glow-bg"></div>
-              <div class="artefak-icon">
-                <i class="fa-solid fa-book-open-reader"></i>
-              </div>
-              <h3>Perangkat Ajar</h3>
-              <p>
-                Penyusunan Modul Ajar (RPP) berbasis PjBL yang mengintegrasikan
-                unsur TPACK dan profil pelajar pancasila.
-              </p>
-              <span class="read-more"
-                >Lihat Detail <i class="fa-solid fa-arrow-right"></i
-              ></span>
-            </a>
-
-            <a href="lkpd.html" class="artefak-card reveal reveal-delay-3">
-              <div class="card-glow-bg"></div>
-              <div class="artefak-icon">
-                <i class="fa-solid fa-clipboard-list"></i>
-              </div>
-              <h3>Instrumen LKPD</h3>
-              <p>
-                Lembar kerja interaktif untuk mendukung proses kolaborasi siswa
-                dalam proyek produksi konten digital.
-              </p>
-              <span class="read-more"
-                >Lihat Detail <i class="fa-solid fa-arrow-right"></i
-              ></span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="galeri-section">
-        <div class="container">
-          <div class="section-title-modern reveal">
-            <h2>Dokumentasi <span class="text-gradient">Kegiatan</span></h2>
-            <p>
-              Representasi visual dari implementasi praktik mengajar dan
-              interaksi akademis di lingkungan sekolah.
-            </p>
-            <div class="title-line-wow mx-auto"></div>
-          </div>
-
-          <div class="galeri-grid">
-            <div class="galeri-item reveal reveal-delay-1">
-              <img src="IMG/kelas.jpg" alt="Kegiatan Kelas" />
-              <div class="galeri-overlay">
-                <div class="overlay-text">
-                  <h4>Praktik Mengajar</h4>
-                  <p>Implementasi Pembelajaran Terbimbing</p>
+        <div class="literatur-grid">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-blue-front">
+                <div class="lit-icon">
+                  <i class="fa-solid fa-people-group"></i>
                 </div>
-                <a href="dokumentasi.html" class="zoom-btn"
-                  ><i class="fa-solid fa-expand"></i
-                ></a>
+                <h3>Konstruktivisme Sosial</h3>
+                <span class="lit-author">Lev Vygotsky</span>
               </div>
-            </div>
-
-            <div class="galeri-item reveal reveal-delay-2">
-              <img src="IMG/lab.jpg" alt="Bimbingan Siswa" />
-              <div class="galeri-overlay">
-                <div class="overlay-text">
-                  <h4>Aktivitas Laboratorium</h4>
-                  <p>Pendampingan Praktik Mandiri</p>
-                </div>
-                <a href="dokumentasi.html" class="zoom-btn"
-                  ><i class="fa-solid fa-expand"></i
-                ></a>
-              </div>
-            </div>
-
-            <div class="galeri-item reveal reveal-delay-3">
-              <img src="IMG/tpac.jpg" alt="Pemanfaatan Teknologi" />
-              <div class="galeri-overlay">
-                <div class="overlay-text">
-                  <h4>Integrasi Teknologi</h4>
-                  <p>Pemanfaatan Platform Digital</p>
-                </div>
-                <a href="dokumentasi.html" class="zoom-btn"
-                  ><i class="fa-solid fa-expand"></i
-                ></a>
-              </div>
-            </div>
-
-            <div class="galeri-item reveal reveal-delay-4">
-              <img src="IMG/diskusi.jpg" alt="Diskusi Kelompok" />
-              <div class="galeri-overlay">
-                <div class="overlay-text">
-                  <h4>Refleksi & Diskusi</h4>
-                  <p>Kolaborasi Bersama Rekan Sejawat</p>
-                </div>
-                <a href="dokumentasi.html" class="zoom-btn"
-                  ><i class="fa-solid fa-expand"></i
-                ></a>
+              <div class="flip-card-back card-blue-back">
+                <p>
+                  Belajar adalah proses aktif mengkonstruksi makna melalui
+                  <strong>interaksi sosial</strong>. Teori ini saya ejawantahkan
+                  melalui <em>Project-Based Learning (PjBL)</em> dengan
+                  pembagian peran terstruktur, mendorong pemecahan masalah antar
+                  siswa secara aktif.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="galeri-footer reveal">
-            <a href="dokumentasi.html" class="btn-outline-tech">
-              Selengkapnya di Galeri <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-purple-front">
+                <div class="lit-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3>Kerangka TPACK</h3>
+                <span class="lit-author">Mishra & Koehler</span>
+              </div>
+              <div class="flip-card-back card-purple-back">
+                <p>
+                  Integrasi harmonis antara
+                  <strong>Teknologi, Pedagogi, dan Konten</strong>. Mendasari
+                  keputusan saya memanfaatkan aplikasi kreatif secara terukur
+                  untuk memfasilitasi gaya belajar dalam penyampaian materi
+                  literasi digital.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-cyan-front">
+                <div class="lit-icon">
+                  <i class="fa-solid fa-hand-holding-hand"></i>
+                </div>
+                <h3>Diferensiasi Pembelajaran</h3>
+                <span class="lit-author">Carol Ann Tomlinson</span>
+              </div>
+              <div class="flip-card-back card-cyan-back">
+                <p>
+                  Mengakomodasi keragaman profil siswa. Saya menerapkan
+                  diferensiasi produk dengan memberikan
+                  <strong>kemerdekaan bagi peserta didik</strong> memilih jenis
+                  konten (poster/video) sesuai minat dan kesiapan mereka.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -312,54 +245,38 @@
     <footer class="epic-footer">
       <div class="footer-orb f-orb-1"></div>
       <div class="footer-orb f-orb-2"></div>
-
       <div class="footer-container">
-        <div class="footer-cta reveal">
-          <h2>Menuju Pendidik <span>Profesional & Inovatif</span></h2>
-          <p>
-            Mendedikasikan ilmu pengetahuan untuk memajukan kualitas pendidikan
-            Informatika di Indonesia.
-          </p>
+        <div class="footer-cta reveal-node">
+          <h2>Mari Ciptakan Pendidikan yang <span>Menginspirasi</span></h2>
+          <p>Masa depan dimulai dari ruang kelas hari ini.</p>
         </div>
-
-        <div class="footer-grid reveal">
+        <div class="footer-grid">
           <div class="footer-brand">
             <h3 class="footer-logo">E-Portofolio <span>PPG</span></h3>
             <p class="footer-desc">
-              Portal resmi dokumentasi artefak dan refleksi Program Pendidikan
-              Profesi Guru (PPG) Prajabatan bidang studi Informatika di
-              Universitas Negeri Yogyakarta.
+              Rekam jejak dedikasi, inovasi, dan refleksi berkelanjutan menuju
+              pendidik profesional abad ke-21.
             </p>
             <div class="social-neon">
-              <a
-                href="https://www.instagram.com/gas_taa?igsh=Z2g0MWRydm4zNzM4"
-                class="neon-btn"
+              <a href="#" class="neon-btn"
                 ><i class="fa-brands fa-instagram"></i
               ></a>
-              <a
-                href="https://www.linkedin.com/in/agasta-pratama-nugraha?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                class="neon-btn"
+              <a href="#" class="neon-btn"
                 ><i class="fa-brands fa-linkedin-in"></i
               ></a>
             </div>
           </div>
-
           <div class="footer-links">
-            <h4>Artefak Utama</h4>
+            <h4>Navigasi Utama</h4>
             <ul>
               <li>
-                <a href="observasi.html"
-                  ><i class="fa-solid fa-arrow-right"></i> Observasi PPL</a
+                <a href="index.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Beranda</a
                 >
               </li>
               <li>
-                <a href="modulajar.html"
-                  ><i class="fa-solid fa-arrow-right"></i> Modul Ajar</a
-                >
-              </li>
-              <li>
-                <a href="lkpd.html"
-                  ><i class="fa-solid fa-arrow-right"></i> E-LKPD</a
+                <a href="artefak.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Artefak PPL</a
                 >
               </li>
               <li>
@@ -367,11 +284,15 @@
                   ><i class="fa-solid fa-arrow-right"></i> Refleksi</a
                 >
               </li>
+              <li>
+                <a href="filosofi.html"
+                  ><i class="fa-solid fa-arrow-right"></i> Filosofi Mengajar</a
+                >
+              </li>
             </ul>
           </div>
-
           <div class="footer-contact">
-            <h4>LPTK Pelaksana</h4>
+            <h4>LPTK Kami</h4>
             <p>
               <i class="fa-solid fa-location-dot"></i> Universitas Negeri
               Yogyakarta
@@ -384,33 +305,25 @@
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
-              >
-              </iframe>
+              ></iframe>
             </div>
           </div>
         </div>
-
         <div class="footer-copyright">
-          <p>
-            © 2026 E-Portofolio PPG Prajabatan Informatika | Agasta Pratama
-            Nugraha
-          </p>
+          <p>© 2026 Agasta Pratama Nugraha. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
     <script>
-      // 1. Floating Navbar Logic
+      // Navbar Scrolled
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
       });
 
-      // 2. Hamburger Menu
+      // Hamburger Menu
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
       hamburger.addEventListener("click", () => {
@@ -418,14 +331,13 @@
         hamburger.classList.toggle("active");
       });
 
-      // 3. Scroll Reveal Animation Logic
+      // Animasi Fade-Up Reguler
       function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
+        var reveals = document.querySelectorAll(".reveal-node, .fade-up");
         for (var i = 0; i < reveals.length; i++) {
           var windowHeight = window.innerHeight;
           var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 100;
-
+          var elementVisible = 50;
           if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
           }
@@ -433,6 +345,80 @@
       }
       window.addEventListener("scroll", reveal);
       reveal();
+
+      // ============================================================
+      // MIND-BLOWING LOGIC: SCROLLYTELLING UNIVERSE (Z-AXIS FLYTHROUGH)
+      // ============================================================
+      const scrollySection = document.getElementById("scrolly-section");
+      const darkOverlay = document.getElementById("dark-overlay");
+      const layer1 = document.getElementById("layer-1");
+      const layer2 = document.getElementById("layer-2");
+      const cards = [
+        document.getElementById("card-1"),
+        document.getElementById("card-2"),
+        document.getElementById("card-3"),
+      ];
+
+      window.addEventListener("scroll", () => {
+        const rect = scrollySection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Kalkulasi Progres Scroll di dalam section (0 sampai 1)
+        let progress = -rect.top / (rect.height - windowHeight);
+
+        // Pastikan nilai tidak bocor
+        if (progress < 0) progress = 0;
+        if (progress > 1) progress = 1;
+
+        // 1. FADE IN/OUT UNIVERSE DARK OVERLAY
+        // Layar akan menggelap (masuk ke universe) saat mulai scroll
+        if (progress > 0 && progress < 1) {
+          let opacity = 1;
+          if (progress < 0.05) opacity = progress / 0.05; // Fade In awal
+          if (progress > 0.95) opacity = (1 - progress) / 0.05; // Fade Out akhir
+          darkOverlay.style.opacity = opacity * 0.95;
+        } else {
+          darkOverlay.style.opacity = 0;
+        }
+
+        // 2. EFEK PARALLAX BACKGROUND BINTANG (Bergerak mendekat & berputar)
+        if (progress > 0 && progress < 1) {
+          layer1.style.transform = `translate(-50%, -50%) scale(${1 + progress * 2}) rotate(${progress * 20}deg)`;
+          layer2.style.transform = `translate(-50%, -50%) scale(${1 + progress * 4}) rotate(${progress * -30}deg)`;
+          layer1.style.opacity = progress > 0.95 ? 0 : 0.6;
+          layer2.style.opacity = progress > 0.95 ? 0 : 0.8;
+        }
+
+        // 3. EFEK KARTU TERBANG (FLY-THROUGH DEPTH)
+        // Menentukan titik tengah kemunculan masing-masing kartu
+        const centers = [0.2, 0.5, 0.8];
+
+        cards.forEach((card, index) => {
+          const center = centers[index];
+          const dist = progress - center; // Jarak dari pusat
+
+          // Skala: dist negatif (belum sampai) = kecil (muncul dari jauh)
+          // dist positif (sudah lewat) = membesar (melewati kepala)
+          let scale = 1 + dist * 4;
+
+          // Opacity: Pudar jika jarak terlalu jauh dari titik fokus (center)
+          let opacity = 1 - Math.abs(dist * 4.5);
+          if (opacity < 0) opacity = 0;
+
+          // Efek blur Kamera (Depth of Field)
+          let blurAmount = Math.abs(dist * 15);
+
+          if (progress > 0 && progress < 1 && opacity > 0.01) {
+            card.style.display = "flex";
+            card.style.opacity = opacity;
+            card.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            card.style.filter = `blur(${blurAmount}px)`;
+            card.style.zIndex = Math.round(opacity * 100);
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
     </script>
   </body>
 </html>
