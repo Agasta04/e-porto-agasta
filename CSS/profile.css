@@ -103,21 +103,21 @@ body {
   padding-bottom: 100px;
 }
 .mesh-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
+  overflow: hidden;
   pointer-events: none;
-  background-color: #f8fafc;
 }
 .mesh-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(120px);
   opacity: 0.5;
-  animation: floatBlobs 20s infinite alternate ease-in-out;
+  animation: breathe 15s infinite alternate ease-in-out;
 }
 .blob-blue {
   width: 600px;
@@ -130,16 +130,16 @@ body {
   width: 500px;
   height: 500px;
   background: #e9d5ff;
-  bottom: 20%;
-  right: -5%;
+  bottom: 0%;
+  right: -10%;
   animation-delay: -5s;
 }
 .blob-cyan {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   background: #cffafe;
   top: 40%;
-  left: 30%;
+  left: 20%;
   animation-delay: -10s;
 }
 @keyframes floatBlobs {

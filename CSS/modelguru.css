@@ -91,44 +91,44 @@ body {
 /* ========================================= */
 /* AMBIENT BACKGROUND GLOW                   */
 /* ========================================= */
-.ambient-bg {
+.mesh-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -2;
-  background: #f8fafc;
   overflow: hidden;
+  pointer-events: none;
 }
-.glow {
+.mesh-blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
   opacity: 0.5;
-  animation: drift 20s infinite alternate linear;
+  animation: breathe 15s infinite alternate ease-in-out;
 }
-.blob-1 {
-  width: 50vw;
-  height: 50vw;
-  background: #dbeafe;
-  top: -20%;
+.blob-blue {
+  width: 600px;
+  height: 600px;
+  background: #bfdbfe;
+  top: -10%;
   left: -10%;
 }
-.blob-2 {
-  width: 60vw;
-  height: 60vw;
-  background: #e0e7ff;
-  bottom: -20%;
+.blob-purple {
+  width: 500px;
+  height: 500px;
+  background: #e9d5ff;
+  bottom: 0%;
   right: -10%;
   animation-delay: -5s;
 }
-.blob-3 {
-  width: 40vw;
-  height: 40vw;
-  background: #f3e8ff;
-  top: 30%;
-  left: 40%;
+.blob-cyan {
+  width: 500px;
+  height: 500px;
+  background: #cffafe;
+  top: 40%;
+  left: 20%;
   animation-delay: -10s;
 }
 

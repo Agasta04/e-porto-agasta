@@ -82,22 +82,21 @@ body {
   overflow: hidden;
 }
 .mesh-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
   pointer-events: none;
-  background-color: #f8fafc;
 }
 .mesh-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(120px);
   opacity: 0.5;
-  animation: floatBlobs 20s infinite alternate ease-in-out;
+  animation: breathe 15s infinite alternate ease-in-out;
 }
 .blob-blue {
   width: 600px;
@@ -110,16 +109,16 @@ body {
   width: 500px;
   height: 500px;
   background: #e9d5ff;
-  bottom: 20%;
-  right: -5%;
+  bottom: 0%;
+  right: -10%;
   animation-delay: -5s;
 }
 .blob-cyan {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   background: #cffafe;
   top: 40%;
-  left: 30%;
+  left: 20%;
   animation-delay: -10s;
 }
 @keyframes floatBlobs {
@@ -137,7 +136,7 @@ body {
 .hero-modern {
   position: relative;
   padding: 160px 0 120px;
-  min-height: 90vh; /* Jarak bawah dikurangi agar tidak kosong */
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -269,8 +268,8 @@ body {
 }
 .modern-portrait-container {
   position: relative;
-  width: 320px;
-  height: 426px;
+  width: 350px;
+  height: 456px;
   margin: 0 auto;
   z-index: 10;
 }
@@ -556,6 +555,296 @@ body {
 }
 
 /* ========================================= */
+/* TIMELINE PPL 1 (LIST KEGIATAN)            */
+/* ========================================= */
+.timeline-section {
+  padding: 40px 0 60px;
+}
+
+.timeline-container {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  margin-top: 30px;
+}
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.timeline-month {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.timeline-legend {
+  display: flex;
+  gap: 20px;
+}
+.legend-item {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-item i {
+  font-size: 0.6rem;
+  color: var(--primary);
+}
+
+/* Daftar Kegiatan - Desain Interaktif */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  padding: 20px 24px;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+.event-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: top;
+}
+.event-card:hover {
+  transform: translateX(8px) translateY(-4px);
+  background: white;
+  box-shadow: 0 20px 35px rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+.event-card:hover::before {
+  transform: scaleY(1);
+}
+.event-icon {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.2);
+}
+.event-card:hover .event-icon {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
+}
+.event-date {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  min-width: 110px;
+  padding-top: 6px;
+  letter-spacing: -0.3px;
+}
+.event-info {
+  flex: 1;
+}
+.event-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  transition: color 0.2s;
+}
+.event-card:hover .event-name {
+  color: var(--primary);
+}
+.event-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ========================================= */
+/* LPTK UNY SECTION                          */
+/* ========================================= */
+.lptk-section {
+  padding: 20px 0 80px;
+}
+.lptk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+.neon-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.neon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.12);
+}
+.card-content {
+  padding: 30px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.holographic-projection {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.lptk-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+.lptk-icon .uny-logo-icon {
+  font-size: 4rem;
+  color: var(--primary);
+}
+.lptk-title h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+.lptk-motto {
+  color: var(--primary);
+  font-style: italic;
+  font-weight: 500;
+}
+.lptk-desc p {
+  margin-bottom: 15px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+.uny-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 18px 12px;
+}
+.uny-stat-item {
+  text-align: center;
+  padding: 8px;
+}
+.uny-stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+  line-height: 1.2;
+}
+.uny-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.card-link:hover {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  gap: 14px;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+.lptk-photo {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.lptk-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.neon-card:hover .lptk-photo img {
+  transform: scale(1.02);
+}
+.photo-credit {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  padding: 6px 0;
+  text-align: center;
+}
+.lptk-maps h4 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.map-wrapper-uny {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.map-caption {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ========================================= */
 /* ZIG-ZAG ARTEFAK SECTION                   */
 /* ========================================= */
 .zigzag-section {
@@ -661,18 +950,14 @@ body {
 /* ========================================= */
 /* 3D FLIP CARD SETUP                        */
 /* ========================================= */
-
-/* Wrapper untuk menentukan prespektif 3D */
 .visual-wrapper {
   width: 100%;
   max-width: 400px;
   aspect-ratio: 4/3;
-  perspective: 1500px; /* Memberikan kedalaman 3D */
+  perspective: 1500px;
   position: relative;
   z-index: 2;
 }
-
-/* Card Container yang akan berputar */
 .visual-card {
   width: 100%;
   height: 100%;
@@ -681,13 +966,11 @@ body {
   transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 30px;
 }
-
-/* Styling Face (Depan & Belakang) */
 .card-face {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Sembunyikan sisi belakang saat berputar */
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 30px;
   display: flex;
@@ -696,39 +979,29 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
-/* Sisi Depan */
 .card-front {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
   border: 2px solid rgba(37, 99, 235, 0.2);
 }
-
 .card-front.card-accent {
   background: var(--accent);
   border: none;
   box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3);
 }
-
-/* Sisi Belakang */
 .card-back {
   background: var(--primary);
-  transform: rotateY(180deg); /* Membalik sisi belakang di awal */
+  transform: rotateY(180deg);
   box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
 }
-
-/* Arah putaran sisi belakang untuk zigzag reverse */
 .zigzag-row.reverse .card-back {
   transform: rotateY(-180deg);
 }
-
 .card-back.back-accent {
-  background: #1e293b; /* Warna gelap agar kontras dengan accent */
+  background: #1e293b;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
-
-/* Teks di Sisi Belakang */
 .back-text {
   color: #ffffff;
   font-size: 1.3rem;
@@ -736,8 +1009,6 @@ body {
   margin-top: 15px;
   letter-spacing: 1px;
 }
-
-/* Ikon Utama */
 .big-icon {
   font-size: 5rem;
   color: var(--primary);
@@ -750,8 +1021,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
-/* Latar Belakang Cahaya Di dalam Visual Card (Depan) */
 .card-glow-bg {
   position: absolute;
   width: 200px;
@@ -767,8 +1036,6 @@ body {
   background: #ffffff;
   opacity: 0.2;
 }
-
-/* Dekorasi Luar (Tidak ikut berputar) */
 .card-decor {
   position: absolute;
   border-radius: 20px;
@@ -799,25 +1066,15 @@ body {
   border-radius: 50%;
   filter: blur(30px);
 }
-
-/* ========================================= */
-/* EFEK HOVER: FLIP TRIGGER                  */
-/* ========================================= */
-
-/* Hentikan efek float saat di-hover dan putar kartu 180 derajat */
 .visual-wrapper:hover {
   animation-play-state: paused;
 }
 .visual-wrapper:hover .visual-card {
   transform: rotateY(180deg);
 }
-
-/* Untuk card yang reverse, putar ke arah berlawanan agar lebih dinamis */
 .zigzag-row.reverse .visual-wrapper:hover .visual-card {
   transform: rotateY(-180deg);
 }
-
-/* Berikan efek pergerakan pada dekorasi di belakangnya saat card berputar */
 .visual-wrapper:hover .decor-1 {
   top: 35px;
   right: -35px;
@@ -833,6 +1090,7 @@ body {
   right: -15%;
   transform: scale(1.05);
 }
+
 /* ========================================= */
 /* EXPANDING GALERI (FIX HOVER & MOBILE)     */
 /* ========================================= */
@@ -846,9 +1104,8 @@ body {
   gap: 15px;
   margin-bottom: 40px;
 }
-
 .panel {
-  flex: 1; /* Diubah jadi 1 agar rata */
+  flex: 1;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
@@ -857,11 +1114,9 @@ body {
   overflow: hidden;
   transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-/* Hanya gunakan class active dari JS agar tidak bentrok */
 .panel.active {
   flex: 4;
 }
-
 .panel::before {
   content: "";
   position: absolute;
@@ -871,7 +1126,6 @@ body {
   height: 60%;
   background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
 }
-
 .panel-content {
   position: absolute;
   bottom: 30px;
@@ -887,7 +1141,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
 .panel-icon {
   width: 50px;
   height: 50px;
@@ -910,9 +1163,75 @@ body {
   font-size: 1rem;
   color: #cbd5e1;
 }
-
 .galeri-footer {
   text-align: center;
+}
+
+/* ========================================= */
+/* LIGHTBOX MODAL                            */
+/* ========================================= */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.lightbox-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 20px;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+}
+.lightbox-caption h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+.lightbox-caption p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 2001;
+}
+.close-lightbox:hover {
+  transform: scale(1.1);
+  color: var(--primary);
 }
 
 /* ========================================= */
@@ -970,7 +1289,6 @@ body {
   gap: 5px;
   align-items: center;
 }
-
 .nav-link,
 .dropbtn {
   text-decoration: none;
@@ -993,7 +1311,6 @@ body {
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
   transform: translateY(-2px);
 }
-
 .dropdown {
   position: relative;
 }
@@ -1042,7 +1359,6 @@ body {
   color: var(--primary);
   transform: translateX(5px);
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1057,7 +1373,6 @@ body {
   border-radius: 3px;
   transition: 0.3s;
 }
-
 .epic-footer {
   position: relative;
   background: #020617;
@@ -1088,7 +1403,6 @@ body {
   bottom: -200px;
   right: -200px;
 }
-
 .footer-container {
   position: relative;
   z-index: 1;
@@ -1117,7 +1431,6 @@ body {
   font-size: 1.2rem;
   color: #94a3b8;
 }
-
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -1138,7 +1451,6 @@ body {
   line-height: 1.8;
   margin-bottom: 30px;
 }
-
 .social-neon {
   display: flex;
   gap: 15px;
@@ -1163,7 +1475,6 @@ body {
   transform: translateY(-5px);
   border-color: var(--primary);
 }
-
 .footer-links h4,
 .footer-contact h4 {
   font-size: 1.2rem;
@@ -1201,7 +1512,6 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
-
 .footer-contact p {
   color: #94a3b8;
   margin-bottom: 15px;
@@ -1220,7 +1530,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
 }
-
 .footer-copyright {
   text-align: center;
   padding-top: 30px;
@@ -1230,7 +1539,7 @@ body {
 }
 
 /* ========================================= */
-/* RESPONSIVE & MOBILE (FIXED LAYOUTS)       */
+/* RESPONSIVE & MOBILE                       */
 /* ========================================= */
 @media (max-width: 1024px) {
   .hero-container {
@@ -1251,7 +1560,6 @@ body {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
-
   .stats-grid-wow {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1262,7 +1570,6 @@ body {
   .active-stat:hover {
     transform: translateY(-10px);
   }
-
   .zigzag-row,
   .zigzag-row.reverse {
     flex-direction: column;
@@ -1272,6 +1579,26 @@ body {
   }
   .zigzag-visual {
     width: 100%;
+  }
+  .lptk-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .event-card {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .event-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+  .event-date {
+    min-width: 90px;
+    font-size: 1rem;
+  }
+  .event-name {
+    font-size: 1.1rem;
   }
 }
 
@@ -1287,7 +1614,6 @@ body {
   .hero-text-content h1 {
     font-size: 2.5rem;
   }
-
   .modern-portrait-container {
     width: 260px;
     height: 346px;
@@ -1300,8 +1626,6 @@ body {
     bottom: 20px;
     right: -20px;
   }
-
-  /* Navbar Mobile */
   .navbar.scrolled {
     width: 96%;
     left: 2%;
@@ -1342,7 +1666,6 @@ body {
     margin: 5px 0;
     text-align: center;
   }
-
   .dropdown {
     width: 100%;
     display: flex;
@@ -1377,8 +1700,6 @@ body {
     text-align: center;
     padding: 10px;
   }
-
-  /* FIX: Artefak Mobile */
   .visual-card {
     max-width: 100%;
     aspect-ratio: auto;
@@ -1387,8 +1708,6 @@ body {
   .zz-number {
     font-size: 3rem;
   }
-
-  /* FIX: Expanding Gallery di HP agar rapi dan tidak bentrok animasi */
   .expanding-gallery {
     flex-direction: column;
     height: 600px;
@@ -1422,7 +1741,6 @@ body {
     font-size: 1.1rem;
     margin-bottom: 5px;
   }
-
   .footer-cta h2 {
     font-size: 2rem;
   }
@@ -1438,5 +1756,26 @@ body {
   .footer-links a,
   .footer-contact p {
     justify-content: center;
+  }
+  .timeline-container {
+    padding: 20px;
+  }
+  .timeline-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .event-card {
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .event-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  .event-date {
+    min-width: auto;
   }
 }
